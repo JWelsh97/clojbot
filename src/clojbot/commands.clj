@@ -1,23 +1,26 @@
 (ns clojbot.commands
   (:require [clojure.tools.logging :as log]
-            [clojbot.utils :as u]
-            [clojure.string :as str]))
+            [clojbot.utils         :as u]
+            [clojure.string        :as str]
+            [clojbot.botcore       :as core]))
 
 
 (defn register
   "Sets up the nickname and user information on the server."
   [bot user]
   (dosync
-   (let [socket @(:socket @bot)]
-     (u/write-out socket (str "NICK " (:nick user)))
-     (u/write-out socket (str "USER " (:nick user) " 0 * :" (:name user)))
-     ;; Change the user in the atom.
-     (println "altering")
-     (alter bot (fn [bot] (assoc bot :user user))))))
+   (core/write-message bot (str "NICK " (:nick user)))
+   (core/write-message bot (str "USER " (:nick user) " 0 * :" (:name user)))))
 
 
 (defn join
   "Joins a given channel on a given server."
   [bot channel]
-  (dosync
-   (u/write-out @(:socket @bot) (str/join " " (list "JOIN" channel)))))
+  (core/write-message bot (str/join " " (list "JOIN" channel))))
+
+
+(defn send-message
+  "Sends a simple message to a channel or user."
+  [bot channel message]
+  (core/write-message bot (str/join " " (list "PRIVMSG" channel message))))
+

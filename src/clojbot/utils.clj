@@ -10,16 +10,4 @@
        (re-matches #"^(?:[:](\S+) )?(\S+)(?: (?!:)(.+?))?(?: [:](.+))?$" message)))
 
 
-(defn write-out 
-  "Writes a raw line to the socket."
-  [socket msg]
-  (log/info "OUT :: " msg)
-  (doto (:out socket)
-    (.println (str msg "\r"))
-    (.flush)))
 
-
-(defn read-in
-  "Reads a line from the socket and parses it into a message map."
-  [socket]
-  (destruct-raw-message (.readLine (:in socket))))
