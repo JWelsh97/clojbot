@@ -22,6 +22,9 @@
   (u/destruct-raw-message (.readLine (:in socket))))
 
 
+(defn- message-dispatch
+  [message]
+  )
 (defn- socket-read-loop
   "Loops on the socket and reads when a line is available."
   [botstate]
@@ -30,13 +33,12 @@
     (let [msg (read-in (:socket @botstate))]
       (log/info "IN  :: " (:original msg))
       (cond
-       ;; Determine if the connection to the server was shut down.
        (re-find #"^ERROR :Closing Link:" (:original msg))
-       (dosync
-        (alter botstate  merge {:exit true}))
-       ;; If this is a ping message.
+       (dosync (alter botstate  merge {:exit true}))
        (re-find #"^PING" (:original msg))
-       (write-out (:socket @botstate) (str "PONG "  (re-find #":.*" msg)))))))
+       (write-out (:socket @botstate) (str "PONG "  (re-find #":.*" (:original msg))))
+       :else
+       (message-dispatch msg)))))
 
 
 (defn- socket-write-loop

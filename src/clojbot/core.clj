@@ -5,7 +5,7 @@
             [clojbot.botcore       :as core]))
 
 (def kreynet {:name "irssi.be.krey.net" :port 6667})
-(def user    {:name "Clojure Bot" :nick "clojbot"})
+(def user    {:name "Clojure Bot" :nick "clojbot" :alternates ["clojbot_" "clojbot__"]})
 
 
 ;;; Channel message: :m1dnight!~m1dnight@109.130.227.3 PRIVMSG #clojbot :message in #clojure
@@ -18,5 +18,9 @@
     (cmd/register bot user)
     (cmd/join bot "#clojbot")
     (cmd/send-message bot "#clojbot" ":ey loser")
-    (Thread/sleep 5000)
-    (core/destroy-bot bot)))
+    (Thread/sleep 10000)
+    (cmd/nick bot "fabiola")
+    (cmd/nick bot "2fabiola")
+    (cmd/nick bot "m1dnight")
+    (cmd/nick bot "clojbot")
+))

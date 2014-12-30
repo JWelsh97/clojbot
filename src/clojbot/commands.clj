@@ -24,3 +24,8 @@
   [bot channel message]
   (core/write-message bot (str/join " " (list "PRIVMSG" channel message))))
 
+
+(defn nick
+  "Changes the nick of the bot."
+  [bot new-nick]
+  (core/write-message bot (str/join " " (list "NICK" new-nick))))
