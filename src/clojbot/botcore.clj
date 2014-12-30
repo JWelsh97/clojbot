@@ -67,6 +67,11 @@
     (.start out-loop)
     botstate))
 
+(defn destroy-bot
+  [bot]
+  (dosync (alter bot (fn [b] (assoc b :exit true)))))
+
+
 (defn write-message
   "Writes a message to the server. Expects RAW messages! Use abstractions
   provided in commands.clj."

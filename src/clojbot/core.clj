@@ -17,4 +17,6 @@
   (let [bot (core/init-bot kreynet user)]
     (cmd/register bot user)
     (cmd/join bot "#clojbot")
-    (cmd/send-message bot "#clojbot" ":ey loser")))
+    (cmd/send-message bot "#clojbot" ":ey loser")
+    (Thread/sleep 5000)
+    (core/destroy-bot bot)))
