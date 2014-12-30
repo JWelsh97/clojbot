@@ -15,15 +15,15 @@
 ;;; message
 
 
-(def replymodule {:name    :reply-module
-                  :type    :PRIVMSG
-                  :handler (fn [bot message]
-                             (cmd/send-message bot (:sender message) ":im replying on a message"))})
+(def testmodule {:name    :reply-module
+                 :type    :PRIVMSG
+                 :handler (fn [bot message]
+                            (cmd/send-message bot (:sender message) ":im replying on a message"))})
 (defn -main
   "I don't do a whole lot."
   [& args]
   (let [bot (core/init-bot kreynet user)]
     (cmd/register bot user)
     (cmd/join bot "#clojbot")
-    (core/connect-module bot replymodule)
+    (core/connect-module bot testmodule)
     (Thread/sleep 5000)))
