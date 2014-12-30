@@ -1,720 +1,554 @@
-[2014-12-30 01:01:06,588][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   terecht bij een van onze operators of via een mailtje.
-[2014-12-30 01:01:06,588][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:01:06,588][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   General KreyNet rules are used.  Please read them on
-[2014-12-30 01:01:06,588][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   http://www.krey.net
-[2014-12-30 01:01:06,590][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:01:06,604][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   Any problems with the ircd can be reported to any oper
-[2014-12-30 01:01:06,604][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   online or via email.
-[2014-12-30 01:01:06,604][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:01:06,604][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-[2014-12-30 01:01:06,604][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:01:06,604][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:01:06,604][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- ����
-[2014-12-30 01:01:06,605][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 376 clojbot :End of MOTD command.
-[2014-12-30 01:01:06,605][INFO][clojbot.botcore] IN  ::  :clojbot!~clojbot@109.130.227.3 JOIN :#clojbot
-[2014-12-30 01:01:06,605][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 353 clojbot = #clojbot :clojbot @m1dnight 
-[2014-12-30 01:01:06,605][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 366 clojbot #clojbot :End of NAMES list.
-[2014-12-30 01:05:13,367][INFO][clojbot.botcore] OUT ::  NICK clojbot
-[2014-12-30 01:05:13,368][INFO][clojbot.botcore] OUT ::  USER clojbot 0 * :Clojure Bot
-[2014-12-30 01:05:13,368][INFO][clojbot.botcore] OUT ::  JOIN #clojbot
-[2014-12-30 01:05:13,368][INFO][clojbot.botcore] OUT ::  PRIVMSG #clojbot :ey loser
-[2014-12-30 01:05:14,166][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 020 * :Please wait while we process your connection.
-[2014-12-30 01:05:17,835][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 001 clojbot :Welcome to the Internet Relay Network clojbot!~clojbot@109.130.227.3
-[2014-12-30 01:05:17,836][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 002 clojbot :Your host is irssi.krey.net, running version vantage-1.3.0
-[2014-12-30 01:05:17,836][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 003 clojbot :This server was created Mon Nov 24 2014 at 19:33:08 UTC
-[2014-12-30 01:05:17,836][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 004 clojbot irssi.krey.net vantage-1.3.0 aoOirw abeiIklmnoOpqrRstv
-[2014-12-30 01:05:17,836][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 005 clojbot RFC2812 PREFIX=(ov)@+ CHANTYPES=#&!+ MODES=3 CHANLIMIT=#&!+:35 TOPICLEN=350 KICKLEN=350 CHANNELLEN=50 IDCHAN=!:5 CHANMODES=beIR,k,l,imnpstaqrcC :are supported by this server
-[2014-12-30 01:05:17,837][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 005 clojbot PENALTY FNC EXCEPTS=e INVEX=I CASEMAPPING=ascii NETWORK=KreyNet :are supported by this server
-[2014-12-30 01:05:17,837][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 042 clojbot 3520AADKH :your unique ID
-[2014-12-30 01:05:17,837][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 251 clojbot :There are 213 users and 0 services on 4 servers
-[2014-12-30 01:05:17,837][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 252 clojbot 5 :operators online
-[2014-12-30 01:05:17,838][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 253 clojbot 1 :unknown connections
-[2014-12-30 01:05:17,838][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 254 clojbot 225 :channels formed
-[2014-12-30 01:05:17,838][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 255 clojbot :I have 71 users, 0 services and 1 servers
-[2014-12-30 01:05:17,838][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 265 clojbot :Current local users 71, max 1013
-[2014-12-30 01:05:17,839][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 266 clojbot :Current global users 213, max 3015
-[2014-12-30 01:05:17,839][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 375 clojbot :- irssi.krey.net Message of the Day - 
-[2014-12-30 01:05:17,840][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 24/11/2014 19:37
-[2014-12-30 01:05:17,840][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  ___              _
-[2014-12-30 01:05:17,840][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- |_ _|_ __ ___ ___(_)
-[2014-12-30 01:05:17,840][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  | || '__/ __/ __| |
-[2014-12-30 01:05:17,841][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  | || |  \__ \__ \ |
-[2014-12-30 01:05:17,841][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- |___|_|  |___/___/_|
-[2014-12-30 01:05:17,841][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:05:17,841][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- admin    Peter  -> peter@krey.net
-[2014-12-30 01:05:17,841][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- ircops   geert -> geert@irssi.org
-[2014-12-30 01:05:17,841][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:05:17,841][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- abuse:   abuse@krey.net
-[2014-12-30 01:05:17,842][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:05:17,842][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-[2014-12-30 01:05:17,842][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:05:17,842][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   De algemene KreyNet regels gelden op deze server.
-[2014-12-30 01:05:17,842][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   Je kan ze nalezen op http://www.krey.net
-[2014-12-30 01:05:17,842][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:05:17,842][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   In geval van problemen met de irc server kan je steeds
-[2014-12-30 01:05:17,842][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   terecht bij een van onze operators of via een mailtje.
-[2014-12-30 01:05:17,843][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:05:17,843][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   General KreyNet rules are used.  Please read them on
-[2014-12-30 01:05:17,864][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   http://www.krey.net
-[2014-12-30 01:05:17,864][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:05:17,864][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   Any problems with the ircd can be reported to any oper
-[2014-12-30 01:05:17,864][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   online or via email.
-[2014-12-30 01:05:17,864][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:05:17,864][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-[2014-12-30 01:05:17,864][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:05:17,865][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:05:17,865][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- ����
-[2014-12-30 01:05:17,865][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 376 clojbot :End of MOTD command.
-[2014-12-30 01:05:17,865][INFO][clojbot.botcore] IN  ::  :clojbot!~clojbot@109.130.227.3 JOIN :#clojbot
-[2014-12-30 01:05:17,865][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 353 clojbot = #clojbot :clojbot @m1dnight 
-[2014-12-30 01:05:17,865][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 366 clojbot #clojbot :End of NAMES list.
-[2014-12-30 01:05:30,470][INFO][clojbot.botcore] IN  ::  :m1dnight!~m1dnight@109.130.227.3 PRIVMSG #clojbot :test
-[2014-12-30 01:07:56,049][INFO][clojbot.botcore] OUT ::  NICK clojbot
-[2014-12-30 01:07:56,050][INFO][clojbot.botcore] OUT ::  USER clojbot 0 * :Clojure Bot
-[2014-12-30 01:07:56,050][INFO][clojbot.botcore] OUT ::  JOIN #clojbot
-[2014-12-30 01:07:56,050][INFO][clojbot.botcore] OUT ::  PRIVMSG #clojbot :ey loser
-[2014-12-30 01:07:56,718][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 020 * :Please wait while we process your connection.
-[2014-12-30 01:08:00,006][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 001 clojbot :Welcome to the Internet Relay Network clojbot!~clojbot@109.130.227.3
-[2014-12-30 01:08:00,007][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 002 clojbot :Your host is irssi.krey.net, running version vantage-1.3.0
-[2014-12-30 01:08:00,007][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 003 clojbot :This server was created Mon Nov 24 2014 at 19:33:08 UTC
-[2014-12-30 01:08:00,007][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 004 clojbot irssi.krey.net vantage-1.3.0 aoOirw abeiIklmnoOpqrRstv
-[2014-12-30 01:08:00,007][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 005 clojbot RFC2812 PREFIX=(ov)@+ CHANTYPES=#&!+ MODES=3 CHANLIMIT=#&!+:35 TOPICLEN=350 KICKLEN=350 CHANNELLEN=50 IDCHAN=!:5 CHANMODES=beIR,k,l,imnpstaqrcC :are supported by this server
-[2014-12-30 01:08:00,008][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 005 clojbot PENALTY FNC EXCEPTS=e INVEX=I CASEMAPPING=ascii NETWORK=KreyNet :are supported by this server
-[2014-12-30 01:08:00,008][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 042 clojbot 3520AADKI :your unique ID
-[2014-12-30 01:08:00,008][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 251 clojbot :There are 213 users and 0 services on 4 servers
-[2014-12-30 01:08:00,008][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 252 clojbot 5 :operators online
-[2014-12-30 01:08:00,009][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 253 clojbot 1 :unknown connections
-[2014-12-30 01:08:00,009][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 254 clojbot 225 :channels formed
-[2014-12-30 01:08:00,010][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 255 clojbot :I have 71 users, 0 services and 1 servers
-[2014-12-30 01:08:00,010][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 265 clojbot :Current local users 71, max 1013
-[2014-12-30 01:08:00,011][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 266 clojbot :Current global users 213, max 3015
-[2014-12-30 01:08:00,011][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 375 clojbot :- irssi.krey.net Message of the Day - 
-[2014-12-30 01:08:00,012][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 24/11/2014 19:37
-[2014-12-30 01:08:00,012][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  ___              _
-[2014-12-30 01:08:00,012][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- |_ _|_ __ ___ ___(_)
-[2014-12-30 01:08:00,012][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  | || '__/ __/ __| |
-[2014-12-30 01:08:00,012][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  | || |  \__ \__ \ |
-[2014-12-30 01:08:00,013][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- |___|_|  |___/___/_|
-[2014-12-30 01:08:00,013][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:08:00,013][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- admin    Peter  -> peter@krey.net
-[2014-12-30 01:08:00,013][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- ircops   geert -> geert@irssi.org
-[2014-12-30 01:08:00,014][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:08:00,014][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- abuse:   abuse@krey.net
-[2014-12-30 01:08:00,014][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:08:00,014][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-[2014-12-30 01:08:00,015][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:08:00,015][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   De algemene KreyNet regels gelden op deze server.
-[2014-12-30 01:08:00,015][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   Je kan ze nalezen op http://www.krey.net
-[2014-12-30 01:08:00,015][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:08:00,015][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   In geval van problemen met de irc server kan je steeds
-[2014-12-30 01:08:00,016][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   terecht bij een van onze operators of via een mailtje.
-[2014-12-30 01:08:00,016][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:08:00,016][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   General KreyNet rules are used.  Please read them on
-[2014-12-30 01:08:00,033][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   http://www.krey.net
-[2014-12-30 01:08:00,033][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:08:00,033][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   Any problems with the ircd can be reported to any oper
-[2014-12-30 01:08:00,034][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   online or via email.
-[2014-12-30 01:08:00,034][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:08:00,034][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-[2014-12-30 01:08:00,034][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:08:00,035][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:08:00,035][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- ����
-[2014-12-30 01:08:00,035][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 376 clojbot :End of MOTD command.
-[2014-12-30 01:08:00,035][INFO][clojbot.botcore] IN  ::  :clojbot!~clojbot@109.130.227.3 JOIN :#clojbot
-[2014-12-30 01:08:00,036][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 353 clojbot = #clojbot :clojbot @m1dnight 
-[2014-12-30 01:08:00,036][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 366 clojbot #clojbot :End of NAMES list.
-[2014-12-30 01:08:06,003][INFO][clojbot.botcore] OUT ::  NICK m1dnight
-[2014-12-30 01:08:06,029][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 433 clojbot m1dnight :Nickname is already in use.
-[2014-12-30 01:08:53,253][INFO][clojbot.botcore] OUT ::  NICK clojbot
-[2014-12-30 01:08:53,253][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 020 * :Please wait while we process your connection.
-[2014-12-30 01:08:53,254][INFO][clojbot.botcore] OUT ::  USER clojbot 0 * :Clojure Bot
-[2014-12-30 01:08:53,254][INFO][clojbot.botcore] OUT ::  JOIN #clojbot
-[2014-12-30 01:08:53,254][INFO][clojbot.botcore] OUT ::  PRIVMSG #clojbot :ey loser
-[2014-12-30 01:08:57,173][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 001 clojbot :Welcome to the Internet Relay Network clojbot!~clojbot@109.130.227.3
-[2014-12-30 01:08:57,173][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 002 clojbot :Your host is irssi.krey.net, running version vantage-1.3.0
-[2014-12-30 01:08:57,173][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 003 clojbot :This server was created Mon Nov 24 2014 at 19:33:08 UTC
-[2014-12-30 01:08:57,173][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 004 clojbot irssi.krey.net vantage-1.3.0 aoOirw abeiIklmnoOpqrRstv
-[2014-12-30 01:08:57,174][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 005 clojbot RFC2812 PREFIX=(ov)@+ CHANTYPES=#&!+ MODES=3 CHANLIMIT=#&!+:35 TOPICLEN=350 KICKLEN=350 CHANNELLEN=50 IDCHAN=!:5 CHANMODES=beIR,k,l,imnpstaqrcC :are supported by this server
-[2014-12-30 01:08:57,174][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 005 clojbot PENALTY FNC EXCEPTS=e INVEX=I CASEMAPPING=ascii NETWORK=KreyNet :are supported by this server
-[2014-12-30 01:08:57,174][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 042 clojbot 3520AADKJ :your unique ID
-[2014-12-30 01:08:57,174][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 251 clojbot :There are 214 users and 0 services on 4 servers
-[2014-12-30 01:08:57,175][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 252 clojbot 5 :operators online
-[2014-12-30 01:08:57,175][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 254 clojbot 225 :channels formed
-[2014-12-30 01:08:57,175][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 255 clojbot :I have 71 users, 0 services and 1 servers
-[2014-12-30 01:08:57,175][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 265 clojbot :Current local users 71, max 1013
-[2014-12-30 01:08:57,176][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 266 clojbot :Current global users 214, max 3015
-[2014-12-30 01:08:57,176][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 375 clojbot :- irssi.krey.net Message of the Day - 
-[2014-12-30 01:08:57,177][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 24/11/2014 19:37
-[2014-12-30 01:08:57,177][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  ___              _
-[2014-12-30 01:08:57,177][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- |_ _|_ __ ___ ___(_)
-[2014-12-30 01:08:57,177][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  | || '__/ __/ __| |
-[2014-12-30 01:08:57,177][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  | || |  \__ \__ \ |
-[2014-12-30 01:08:57,178][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- |___|_|  |___/___/_|
-[2014-12-30 01:08:57,178][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:08:57,178][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- admin    Peter  -> peter@krey.net
-[2014-12-30 01:08:57,178][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- ircops   geert -> geert@irssi.org
-[2014-12-30 01:08:57,178][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:08:57,178][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- abuse:   abuse@krey.net
-[2014-12-30 01:08:57,178][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:08:57,178][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-[2014-12-30 01:08:57,179][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:08:57,179][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   De algemene KreyNet regels gelden op deze server.
-[2014-12-30 01:08:57,179][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   Je kan ze nalezen op http://www.krey.net
-[2014-12-30 01:08:57,179][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:08:57,179][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   In geval van problemen met de irc server kan je steeds
-[2014-12-30 01:08:57,179][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   terecht bij een van onze operators of via een mailtje.
-[2014-12-30 01:08:57,179][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:08:57,180][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   General KreyNet rules are used.  Please read them on
-[2014-12-30 01:08:57,180][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   http://www.krey.net
-[2014-12-30 01:08:57,180][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:08:57,199][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   Any problems with the ircd can be reported to any oper
-[2014-12-30 01:08:57,199][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   online or via email.
-[2014-12-30 01:08:57,199][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:08:57,199][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-[2014-12-30 01:08:57,199][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:08:57,199][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:08:57,199][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- ����
-[2014-12-30 01:08:57,199][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 376 clojbot :End of MOTD command.
-[2014-12-30 01:08:57,200][INFO][clojbot.botcore] IN  ::  :clojbot!~clojbot@109.130.227.3 JOIN :#clojbot
-[2014-12-30 01:08:57,200][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 353 clojbot = #clojbot :clojbot @m1dnight 
-[2014-12-30 01:08:57,200][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 366 clojbot #clojbot :End of NAMES list.
-[2014-12-30 01:09:03,206][INFO][clojbot.botcore] OUT ::  NICK fabiola
-[2014-12-30 01:09:03,207][INFO][clojbot.botcore] OUT ::  NICK 2fabiola
-[2014-12-30 01:09:03,207][INFO][clojbot.botcore] OUT ::  NICK m1dnight
-[2014-12-30 01:09:03,234][INFO][clojbot.botcore] IN  ::  :clojbot!~clojbot@109.130.227.3 NICK :fabiola
-[2014-12-30 01:09:04,649][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 432 fabiola 2fabiola :Erroneous Nickname
-[2014-12-30 01:09:07,612][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 433 fabiola m1dnight :Nickname is already in use.
-[2014-12-30 01:09:32,240][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 020 * :Please wait while we process your connection.
-[2014-12-30 01:09:32,240][INFO][clojbot.botcore] OUT ::  NICK clojbot
-[2014-12-30 01:09:32,242][INFO][clojbot.botcore] OUT ::  USER clojbot 0 * :Clojure Bot
-[2014-12-30 01:09:32,242][INFO][clojbot.botcore] OUT ::  JOIN #clojbot
-[2014-12-30 01:09:32,242][INFO][clojbot.botcore] OUT ::  PRIVMSG #clojbot :ey loser
-[2014-12-30 01:09:59,782][INFO][clojbot.botcore] OUT ::  NICK clojbot
-[2014-12-30 01:09:59,783][INFO][clojbot.botcore] OUT ::  USER clojbot 0 * :Clojure Bot
-[2014-12-30 01:09:59,783][INFO][clojbot.botcore] OUT ::  JOIN #clojbot
-[2014-12-30 01:09:59,783][INFO][clojbot.botcore] OUT ::  PRIVMSG #clojbot :ey loser
-[2014-12-30 01:10:00,535][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 020 * :Please wait while we process your connection.
-[2014-12-30 01:10:42,584][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 020 * :Please wait while we process your connection.
-[2014-12-30 01:10:42,584][INFO][clojbot.botcore] OUT ::  NICK clojbot
-[2014-12-30 01:10:42,585][INFO][clojbot.botcore] OUT ::  USER clojbot 0 * :Clojure Bot
-[2014-12-30 01:10:42,585][INFO][clojbot.botcore] OUT ::  JOIN #clojbot
-[2014-12-30 01:10:42,586][INFO][clojbot.botcore] OUT ::  PRIVMSG #clojbot :ey loser
-[2014-12-30 01:10:46,402][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 001 clojbot :Welcome to the Internet Relay Network clojbot!~clojbot@109.130.227.3
-[2014-12-30 01:10:46,403][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 002 clojbot :Your host is irssi.krey.net, running version vantage-1.3.0
-[2014-12-30 01:10:46,405][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 003 clojbot :This server was created Mon Nov 24 2014 at 19:33:08 UTC
-[2014-12-30 01:10:46,405][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 004 clojbot irssi.krey.net vantage-1.3.0 aoOirw abeiIklmnoOpqrRstv
-[2014-12-30 01:10:46,405][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 005 clojbot RFC2812 PREFIX=(ov)@+ CHANTYPES=#&!+ MODES=3 CHANLIMIT=#&!+:35 TOPICLEN=350 KICKLEN=350 CHANNELLEN=50 IDCHAN=!:5 CHANMODES=beIR,k,l,imnpstaqrcC :are supported by this server
-[2014-12-30 01:10:46,406][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 005 clojbot PENALTY FNC EXCEPTS=e INVEX=I CASEMAPPING=ascii NETWORK=KreyNet :are supported by this server
-[2014-12-30 01:10:46,406][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 042 clojbot 3520AADKM :your unique ID
-[2014-12-30 01:10:46,406][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 251 clojbot :There are 214 users and 0 services on 4 servers
-[2014-12-30 01:10:46,406][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 252 clojbot 5 :operators online
-[2014-12-30 01:10:46,407][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 254 clojbot 225 :channels formed
-[2014-12-30 01:10:46,407][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 255 clojbot :I have 71 users, 0 services and 1 servers
-[2014-12-30 01:10:46,407][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 265 clojbot :Current local users 71, max 1013
-[2014-12-30 01:10:46,407][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 266 clojbot :Current global users 214, max 3015
-[2014-12-30 01:10:46,407][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 375 clojbot :- irssi.krey.net Message of the Day - 
-[2014-12-30 01:10:46,408][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 24/11/2014 19:37
-[2014-12-30 01:10:46,408][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  ___              _
-[2014-12-30 01:10:46,409][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- |_ _|_ __ ___ ___(_)
-[2014-12-30 01:10:46,409][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  | || '__/ __/ __| |
-[2014-12-30 01:10:46,409][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  | || |  \__ \__ \ |
-[2014-12-30 01:10:46,409][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- |___|_|  |___/___/_|
-[2014-12-30 01:10:46,409][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:10:46,410][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- admin    Peter  -> peter@krey.net
-[2014-12-30 01:10:46,410][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- ircops   geert -> geert@irssi.org
-[2014-12-30 01:10:46,410][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:10:46,410][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- abuse:   abuse@krey.net
-[2014-12-30 01:10:46,410][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:10:46,411][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-[2014-12-30 01:10:46,413][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:10:46,413][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   De algemene KreyNet regels gelden op deze server.
-[2014-12-30 01:10:46,413][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   Je kan ze nalezen op http://www.krey.net
-[2014-12-30 01:10:46,413][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:10:46,414][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   In geval van problemen met de irc server kan je steeds
-[2014-12-30 01:10:46,414][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   terecht bij een van onze operators of via een mailtje.
-[2014-12-30 01:10:46,414][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:10:46,414][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   General KreyNet rules are used.  Please read them on
-[2014-12-30 01:10:46,414][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   http://www.krey.net
-[2014-12-30 01:10:46,414][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:10:46,428][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   Any problems with the ircd can be reported to any oper
-[2014-12-30 01:10:46,428][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   online or via email.
-[2014-12-30 01:10:46,428][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:10:46,428][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-[2014-12-30 01:10:46,428][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:10:46,429][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:10:46,429][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- ����
-[2014-12-30 01:10:46,429][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 376 clojbot :End of MOTD command.
-[2014-12-30 01:10:46,429][INFO][clojbot.botcore] IN  ::  :clojbot!~clojbot@109.130.227.3 JOIN :#clojbot
-[2014-12-30 01:10:46,429][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 353 clojbot = #clojbot :clojbot @m1dnight 
-[2014-12-30 01:10:46,429][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 366 clojbot #clojbot :End of NAMES list.
-[2014-12-30 01:19:58,578][INFO][clojbot.botcore] OUT ::  NICK clojbot
-[2014-12-30 01:19:58,579][INFO][clojbot.botcore] OUT ::  USER clojbot 0 * :Clojure Bot
-[2014-12-30 01:19:58,579][INFO][clojbot.botcore] OUT ::  JOIN #clojbot
-[2014-12-30 01:19:58,579][INFO][clojbot.botcore] OUT ::  PRIVMSG #clojbot :ey loser
-[2014-12-30 01:19:59,476][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 020 * :Please wait while we process your connection.
-[2014-12-30 01:20:03,377][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 001 clojbot :Welcome to the Internet Relay Network clojbot!~clojbot@109.130.227.3
-[2014-12-30 01:20:03,378][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 002 clojbot :Your host is irssi.krey.net, running version vantage-1.3.0
-[2014-12-30 01:20:03,378][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 003 clojbot :This server was created Mon Nov 24 2014 at 19:33:08 UTC
-[2014-12-30 01:20:03,378][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 004 clojbot irssi.krey.net vantage-1.3.0 aoOirw abeiIklmnoOpqrRstv
-[2014-12-30 01:20:03,379][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 005 clojbot RFC2812 PREFIX=(ov)@+ CHANTYPES=#&!+ MODES=3 CHANLIMIT=#&!+:35 TOPICLEN=350 KICKLEN=350 CHANNELLEN=50 IDCHAN=!:5 CHANMODES=beIR,k,l,imnpstaqrcC :are supported by this server
-[2014-12-30 01:20:03,379][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 005 clojbot PENALTY FNC EXCEPTS=e INVEX=I CASEMAPPING=ascii NETWORK=KreyNet :are supported by this server
-[2014-12-30 01:20:03,379][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 042 clojbot 3520AADKN :your unique ID
-[2014-12-30 01:20:03,379][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 251 clojbot :There are 210 users and 0 services on 4 servers
-[2014-12-30 01:20:03,380][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 252 clojbot 5 :operators online
-[2014-12-30 01:20:03,380][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 254 clojbot 225 :channels formed
-[2014-12-30 01:20:03,380][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 255 clojbot :I have 69 users, 0 services and 1 servers
-[2014-12-30 01:20:03,380][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 265 clojbot :Current local users 69, max 1013
-[2014-12-30 01:20:03,381][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 266 clojbot :Current global users 210, max 3015
-[2014-12-30 01:20:03,381][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 375 clojbot :- irssi.krey.net Message of the Day - 
-[2014-12-30 01:20:03,382][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 24/11/2014 19:37
-[2014-12-30 01:20:03,382][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  ___              _
-[2014-12-30 01:20:03,382][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- |_ _|_ __ ___ ___(_)
-[2014-12-30 01:20:03,382][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  | || '__/ __/ __| |
-[2014-12-30 01:20:03,383][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  | || |  \__ \__ \ |
-[2014-12-30 01:20:03,383][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- |___|_|  |___/___/_|
-[2014-12-30 01:20:03,383][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:20:03,383][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- admin    Peter  -> peter@krey.net
-[2014-12-30 01:20:03,384][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- ircops   geert -> geert@irssi.org
-[2014-12-30 01:20:03,384][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:20:03,384][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- abuse:   abuse@krey.net
-[2014-12-30 01:20:03,384][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:20:03,384][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-[2014-12-30 01:20:03,385][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:20:03,385][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   De algemene KreyNet regels gelden op deze server.
-[2014-12-30 01:20:03,385][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   Je kan ze nalezen op http://www.krey.net
-[2014-12-30 01:20:03,385][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:20:03,386][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   In geval van problemen met de irc server kan je steeds
-[2014-12-30 01:20:03,386][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   terecht bij een van onze operators of via een mailtje.
-[2014-12-30 01:20:03,386][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:20:03,386][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   General KreyNet rules are used.  Please read them on
-[2014-12-30 01:20:03,386][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   http://www.krey.net
-[2014-12-30 01:20:03,387][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:20:03,403][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   Any problems with the ircd can be reported to any oper
-[2014-12-30 01:20:03,403][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   online or via email.
-[2014-12-30 01:20:03,404][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:20:03,404][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-[2014-12-30 01:20:03,404][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:20:03,404][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:20:03,405][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- ����
-[2014-12-30 01:20:03,405][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 376 clojbot :End of MOTD command.
-[2014-12-30 01:20:03,405][INFO][clojbot.botcore] IN  ::  :clojbot!~clojbot@109.130.227.3 JOIN :#clojbot
-[2014-12-30 01:20:03,407][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 353 clojbot = #clojbot :clojbot @m1dnight 
-[2014-12-30 01:20:03,407][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 366 clojbot #clojbot :End of NAMES list.
-[2014-12-30 01:20:08,535][INFO][clojbot.botcore] OUT ::  NICK fabiola
-[2014-12-30 01:20:08,535][INFO][clojbot.botcore] OUT ::  NICK 2fabiola
-[2014-12-30 01:20:08,536][INFO][clojbot.botcore] OUT ::  NICK m1dnight
-[2014-12-30 01:20:08,561][INFO][clojbot.botcore] IN  ::  :clojbot!~clojbot@109.130.227.3 NICK :fabiola
-[2014-12-30 01:20:10,213][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 432 fabiola 2fabiola :Erroneous Nickname
-[2014-12-30 01:20:12,962][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 433 fabiola m1dnight :Nickname is already in use.
-[2014-12-30 01:25:48,899][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 01:28:34,245][INFO][clojbot.botcore] OUT ::  NICK clojbot
-[2014-12-30 01:28:34,246][INFO][clojbot.botcore] OUT ::  USER clojbot 0 * :Clojure Bot
-[2014-12-30 01:28:34,247][INFO][clojbot.botcore] OUT ::  JOIN #clojbot
-[2014-12-30 01:28:34,247][INFO][clojbot.botcore] OUT ::  PRIVMSG #clojbot :ey loser
-[2014-12-30 01:28:36,011][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 020 * :Please wait while we process your connection.
-[2014-12-30 01:28:38,323][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 001 clojbot :Welcome to the Internet Relay Network clojbot!~clojbot@109.130.227.3
-[2014-12-30 01:28:38,323][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 002 clojbot :Your host is irssi.krey.net, running version vantage-1.3.0
-[2014-12-30 01:28:38,323][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 003 clojbot :This server was created Mon Nov 24 2014 at 19:33:08 UTC
-[2014-12-30 01:28:38,323][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 004 clojbot irssi.krey.net vantage-1.3.0 aoOirw abeiIklmnoOpqrRstv
-[2014-12-30 01:28:38,324][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 005 clojbot RFC2812 PREFIX=(ov)@+ CHANTYPES=#&!+ MODES=3 CHANLIMIT=#&!+:35 TOPICLEN=350 KICKLEN=350 CHANNELLEN=50 IDCHAN=!:5 CHANMODES=beIR,k,l,imnpstaqrcC :are supported by this server
-[2014-12-30 01:28:38,324][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 005 clojbot PENALTY FNC EXCEPTS=e INVEX=I CASEMAPPING=ascii NETWORK=KreyNet :are supported by this server
-[2014-12-30 01:28:38,324][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 042 clojbot 3520AADKO :your unique ID
-[2014-12-30 01:28:38,325][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 251 clojbot :There are 210 users and 0 services on 4 servers
-[2014-12-30 01:28:38,325][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 252 clojbot 5 :operators online
-[2014-12-30 01:28:38,325][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 254 clojbot 225 :channels formed
-[2014-12-30 01:28:38,325][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 255 clojbot :I have 69 users, 0 services and 1 servers
-[2014-12-30 01:28:38,326][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 265 clojbot :Current local users 69, max 1013
-[2014-12-30 01:28:38,326][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 266 clojbot :Current global users 210, max 3015
-[2014-12-30 01:28:38,326][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 375 clojbot :- irssi.krey.net Message of the Day - 
-[2014-12-30 01:28:38,327][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 24/11/2014 19:37
-[2014-12-30 01:28:38,327][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  ___              _
-[2014-12-30 01:28:38,328][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- |_ _|_ __ ___ ___(_)
-[2014-12-30 01:28:38,328][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  | || '__/ __/ __| |
-[2014-12-30 01:28:38,328][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  | || |  \__ \__ \ |
-[2014-12-30 01:28:38,328][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- |___|_|  |___/___/_|
-[2014-12-30 01:28:38,329][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:28:38,329][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- admin    Peter  -> peter@krey.net
-[2014-12-30 01:28:38,329][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- ircops   geert -> geert@irssi.org
-[2014-12-30 01:28:38,329][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:28:38,329][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- abuse:   abuse@krey.net
-[2014-12-30 01:28:38,330][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:28:38,330][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-[2014-12-30 01:28:38,330][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:28:38,330][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   De algemene KreyNet regels gelden op deze server.
-[2014-12-30 01:28:38,330][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   Je kan ze nalezen op http://www.krey.net
-[2014-12-30 01:28:38,331][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:28:38,331][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   In geval van problemen met de irc server kan je steeds
-[2014-12-30 01:28:38,331][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   terecht bij een van onze operators of via een mailtje.
-[2014-12-30 01:28:38,331][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:28:38,332][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   General KreyNet rules are used.  Please read them on
-[2014-12-30 01:28:38,332][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   http://www.krey.net
-[2014-12-30 01:28:38,332][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:28:38,348][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   Any problems with the ircd can be reported to any oper
-[2014-12-30 01:28:38,349][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   online or via email.
-[2014-12-30 01:28:38,349][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:28:38,349][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-[2014-12-30 01:28:38,349][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:28:38,349][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:28:38,350][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- ����
-[2014-12-30 01:28:38,350][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 376 clojbot :End of MOTD command.
-[2014-12-30 01:28:38,350][INFO][clojbot.botcore] IN  ::  :clojbot!~clojbot@109.130.227.3 JOIN :#clojbot
-[2014-12-30 01:28:38,350][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 353 clojbot = #clojbot :clojbot @m1dnight 
-[2014-12-30 01:28:38,350][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 366 clojbot #clojbot :End of NAMES list.
-[2014-12-30 01:28:44,206][INFO][clojbot.botcore] OUT ::  NICK fabiola
-[2014-12-30 01:28:44,206][INFO][clojbot.botcore] OUT ::  NICK 2fabiola
-[2014-12-30 01:28:44,206][INFO][clojbot.botcore] OUT ::  NICK m1dnight
-[2014-12-30 01:28:44,325][INFO][clojbot.botcore] IN  ::  :clojbot!~clojbot@109.130.227.3 NICK :fabiola
-[2014-12-30 01:28:44,914][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 432 fabiola 2fabiola :Erroneous Nickname
-[2014-12-30 01:28:48,069][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 433 fabiola m1dnight :Nickname is already in use.
-[2014-12-30 01:29:20,351][INFO][clojbot.botcore] OUT ::  NICK clojbot
-[2014-12-30 01:29:20,352][INFO][clojbot.botcore] OUT ::  USER clojbot 0 * :Clojure Bot
-[2014-12-30 01:29:20,352][INFO][clojbot.botcore] OUT ::  JOIN #clojbot
-[2014-12-30 01:29:20,352][INFO][clojbot.botcore] OUT ::  PRIVMSG #clojbot :ey loser
-[2014-12-30 01:29:21,235][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 020 * :Please wait while we process your connection.
-[2014-12-30 01:29:25,619][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 001 clojbot :Welcome to the Internet Relay Network clojbot!~clojbot@109.130.227.3
-[2014-12-30 01:29:25,619][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 002 clojbot :Your host is irssi.krey.net, running version vantage-1.3.0
-[2014-12-30 01:29:25,620][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 003 clojbot :This server was created Mon Nov 24 2014 at 19:33:08 UTC
-[2014-12-30 01:29:25,620][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 004 clojbot irssi.krey.net vantage-1.3.0 aoOirw abeiIklmnoOpqrRstv
-[2014-12-30 01:29:25,620][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 005 clojbot RFC2812 PREFIX=(ov)@+ CHANTYPES=#&!+ MODES=3 CHANLIMIT=#&!+:35 TOPICLEN=350 KICKLEN=350 CHANNELLEN=50 IDCHAN=!:5 CHANMODES=beIR,k,l,imnpstaqrcC :are supported by this server
-[2014-12-30 01:29:25,621][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 005 clojbot PENALTY FNC EXCEPTS=e INVEX=I CASEMAPPING=ascii NETWORK=KreyNet :are supported by this server
-[2014-12-30 01:29:25,621][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 042 clojbot 3520AADKP :your unique ID
-[2014-12-30 01:29:25,621][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 251 clojbot :There are 210 users and 0 services on 4 servers
-[2014-12-30 01:29:25,621][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 252 clojbot 5 :operators online
-[2014-12-30 01:29:25,622][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 253 clojbot 1 :unknown connections
-[2014-12-30 01:29:25,622][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 254 clojbot 225 :channels formed
-[2014-12-30 01:29:25,622][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 255 clojbot :I have 69 users, 0 services and 1 servers
-[2014-12-30 01:29:25,623][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 265 clojbot :Current local users 69, max 1013
-[2014-12-30 01:29:25,623][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 266 clojbot :Current global users 210, max 3015
-[2014-12-30 01:29:25,624][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 375 clojbot :- irssi.krey.net Message of the Day - 
-[2014-12-30 01:29:25,624][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 24/11/2014 19:37
-[2014-12-30 01:29:25,624][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  ___              _
-[2014-12-30 01:29:25,624][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- |_ _|_ __ ___ ___(_)
-[2014-12-30 01:29:25,625][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  | || '__/ __/ __| |
-[2014-12-30 01:29:25,625][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  | || |  \__ \__ \ |
-[2014-12-30 01:29:25,625][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- |___|_|  |___/___/_|
-[2014-12-30 01:29:25,625][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:29:25,625][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- admin    Peter  -> peter@krey.net
-[2014-12-30 01:29:25,626][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- ircops   geert -> geert@irssi.org
-[2014-12-30 01:29:25,626][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:29:25,626][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- abuse:   abuse@krey.net
-[2014-12-30 01:29:25,626][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:29:25,626][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-[2014-12-30 01:29:25,627][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:29:25,627][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   De algemene KreyNet regels gelden op deze server.
-[2014-12-30 01:29:25,627][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   Je kan ze nalezen op http://www.krey.net
-[2014-12-30 01:29:25,627][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:29:25,627][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   In geval van problemen met de irc server kan je steeds
-[2014-12-30 01:29:25,628][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   terecht bij een van onze operators of via een mailtje.
-[2014-12-30 01:29:25,628][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:29:25,628][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   General KreyNet rules are used.  Please read them on
-[2014-12-30 01:29:25,644][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   http://www.krey.net
-[2014-12-30 01:29:25,645][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:29:25,645][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   Any problems with the ircd can be reported to any oper
-[2014-12-30 01:29:25,645][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   online or via email.
-[2014-12-30 01:29:25,645][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:29:25,645][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-[2014-12-30 01:29:25,646][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:29:25,646][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:29:25,646][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- ����
-[2014-12-30 01:29:25,646][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 376 clojbot :End of MOTD command.
-[2014-12-30 01:29:25,646][INFO][clojbot.botcore] IN  ::  :clojbot!~clojbot@109.130.227.3 JOIN :#clojbot
-[2014-12-30 01:29:25,647][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 353 clojbot = #clojbot :clojbot @m1dnight 
-[2014-12-30 01:29:25,647][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 366 clojbot #clojbot :End of NAMES list.
-[2014-12-30 01:29:30,309][INFO][clojbot.botcore] OUT ::  NICK fabiola
-[2014-12-30 01:29:30,309][INFO][clojbot.botcore] OUT ::  NICK 2fabiola
-[2014-12-30 01:29:30,310][INFO][clojbot.botcore] OUT ::  NICK m1dnight
-[2014-12-30 01:29:30,514][INFO][clojbot.botcore] IN  ::  :clojbot!~clojbot@109.130.227.3 NICK :fabiola
-[2014-12-30 01:29:31,891][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 432 fabiola 2fabiola :Erroneous Nickname
-[2014-12-30 01:29:35,445][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 433 fabiola m1dnight :Nickname is already in use.
-[2014-12-30 01:30:20,144][INFO][clojbot.botcore] OUT ::  NICK clojbot
-[2014-12-30 01:30:20,145][INFO][clojbot.botcore] OUT ::  USER clojbot 0 * :Clojure Bot
-[2014-12-30 01:30:20,145][INFO][clojbot.botcore] OUT ::  JOIN #clojbot
-[2014-12-30 01:30:20,145][INFO][clojbot.botcore] OUT ::  PRIVMSG #clojbot :ey loser
-[2014-12-30 01:30:20,704][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 020 * :Please wait while we process your connection.
-[2014-12-30 01:30:24,183][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 001 clojbot :Welcome to the Internet Relay Network clojbot!~clojbot@109.130.227.3
-[2014-12-30 01:30:24,183][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 002 clojbot :Your host is irssi.krey.net, running version vantage-1.3.0
-[2014-12-30 01:30:24,185][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 003 clojbot :This server was created Mon Nov 24 2014 at 19:33:08 UTC
-[2014-12-30 01:30:24,186][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 004 clojbot irssi.krey.net vantage-1.3.0 aoOirw abeiIklmnoOpqrRstv
-[2014-12-30 01:30:24,186][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 005 clojbot RFC2812 PREFIX=(ov)@+ CHANTYPES=#&!+ MODES=3 CHANLIMIT=#&!+:35 TOPICLEN=350 KICKLEN=350 CHANNELLEN=50 IDCHAN=!:5 CHANMODES=beIR,k,l,imnpstaqrcC :are supported by this server
-[2014-12-30 01:30:24,186][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 005 clojbot PENALTY FNC EXCEPTS=e INVEX=I CASEMAPPING=ascii NETWORK=KreyNet :are supported by this server
-[2014-12-30 01:30:24,187][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 042 clojbot 3520AADKQ :your unique ID
-[2014-12-30 01:30:24,187][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 251 clojbot :There are 209 users and 0 services on 4 servers
-[2014-12-30 01:30:24,187][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 252 clojbot 5 :operators online
-[2014-12-30 01:30:24,187][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 254 clojbot 225 :channels formed
-[2014-12-30 01:30:24,187][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 255 clojbot :I have 69 users, 0 services and 1 servers
-[2014-12-30 01:30:24,188][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 265 clojbot :Current local users 69, max 1013
-[2014-12-30 01:30:24,188][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 266 clojbot :Current global users 209, max 3015
-[2014-12-30 01:30:24,188][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 375 clojbot :- irssi.krey.net Message of the Day - 
-[2014-12-30 01:30:24,189][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 24/11/2014 19:37
-[2014-12-30 01:30:24,189][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  ___              _
-[2014-12-30 01:30:24,190][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- |_ _|_ __ ___ ___(_)
-[2014-12-30 01:30:24,190][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  | || '__/ __/ __| |
-[2014-12-30 01:30:24,190][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  | || |  \__ \__ \ |
-[2014-12-30 01:30:24,190][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- |___|_|  |___/___/_|
-[2014-12-30 01:30:24,191][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:30:24,191][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- admin    Peter  -> peter@krey.net
-[2014-12-30 01:30:24,191][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- ircops   geert -> geert@irssi.org
-[2014-12-30 01:30:24,191][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:30:24,191][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- abuse:   abuse@krey.net
-[2014-12-30 01:30:24,192][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:30:24,192][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-[2014-12-30 01:30:24,192][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:30:24,192][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   De algemene KreyNet regels gelden op deze server.
-[2014-12-30 01:30:24,192][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   Je kan ze nalezen op http://www.krey.net
-[2014-12-30 01:30:24,193][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:30:24,193][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   In geval van problemen met de irc server kan je steeds
-[2014-12-30 01:30:24,193][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   terecht bij een van onze operators of via een mailtje.
-[2014-12-30 01:30:24,193][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:30:24,193][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   General KreyNet rules are used.  Please read them on
-[2014-12-30 01:30:24,194][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   http://www.krey.net
-[2014-12-30 01:30:24,194][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:30:24,216][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   Any problems with the ircd can be reported to any oper
-[2014-12-30 01:30:24,216][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   online or via email.
-[2014-12-30 01:30:24,216][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:30:24,216][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-[2014-12-30 01:30:24,217][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:30:24,217][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
-[2014-12-30 01:30:24,217][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- ����
-[2014-12-30 01:30:24,217][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 376 clojbot :End of MOTD command.
-[2014-12-30 01:30:24,217][INFO][clojbot.botcore] IN  ::  :clojbot!~clojbot@109.130.227.3 JOIN :#clojbot
-[2014-12-30 01:30:24,218][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 353 clojbot = #clojbot :clojbot @m1dnight 
-[2014-12-30 01:30:24,218][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 366 clojbot #clojbot :End of NAMES list.
-[2014-12-30 01:30:30,106][INFO][clojbot.botcore] OUT ::  NICK fabiola
-[2014-12-30 01:30:30,106][INFO][clojbot.botcore] OUT ::  NICK 2fabiola
-[2014-12-30 01:30:30,106][INFO][clojbot.botcore] OUT ::  NICK m1dnight
-[2014-12-30 01:30:30,107][INFO][clojbot.botcore] OUT ::  NICK clojbot
-[2014-12-30 01:30:30,148][INFO][clojbot.botcore] IN  ::  :clojbot!~clojbot@109.130.227.3 NICK :fabiola
-[2014-12-30 01:30:30,770][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 432 fabiola 2fabiola :Erroneous Nickname
-[2014-12-30 01:30:34,235][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 433 fabiola m1dnight :Nickname is already in use.
-[2014-12-30 01:30:37,639][INFO][clojbot.botcore] IN  ::  :fabiola!~clojbot@109.130.227.3 NICK :clojbot
-[2014-12-30 01:36:18,394][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 01:36:18,394][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 01:42:07,965][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 01:42:07,965][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 01:47:58,909][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 01:47:58,909][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 01:53:28,288][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 01:53:28,288][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 01:59:17,867][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 01:59:17,867][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 02:04:42,542][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 02:04:42,543][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 02:10:14,827][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 02:10:14,827][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 02:16:04,736][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 02:16:04,737][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 02:21:43,403][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 02:21:43,404][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 02:27:33,284][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 02:27:33,284][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 02:33:22,745][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 02:33:22,745][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 02:39:13,474][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 02:39:13,475][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 02:45:05,718][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 02:45:05,718][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 02:50:51,704][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 02:50:51,705][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 02:56:42,526][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 02:56:42,527][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 03:02:07,744][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 03:02:07,744][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 03:07:58,436][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 03:07:58,437][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 03:13:48,124][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 03:13:48,124][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 03:20:21,928][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 03:20:21,928][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 03:26:12,265][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 03:26:12,265][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 03:32:20,276][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 03:32:20,276][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 03:38:10,283][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 03:38:10,283][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 03:44:00,821][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 03:44:00,821][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 03:49:37,534][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 03:49:37,534][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 03:55:28,077][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 03:55:28,077][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 04:01:18,110][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 04:01:18,110][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 04:07:20,688][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 04:07:20,688][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 04:13:10,685][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 04:13:10,685][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 04:18:48,155][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 04:18:48,156][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 04:24:48,161][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 04:24:48,162][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 04:30:38,045][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 04:30:38,045][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 04:36:28,400][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 04:36:28,400][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 04:42:17,691][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 04:42:17,691][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 04:48:35,036][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 04:48:35,036][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 04:55:07,216][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 04:55:07,217][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 05:00:42,035][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 05:00:42,035][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 05:06:31,690][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 05:06:31,690][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 05:12:21,678][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 05:12:21,678][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 05:18:12,261][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 05:18:12,261][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 05:23:32,622][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 05:23:32,627][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 05:29:03,162][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 05:29:03,163][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 05:34:53,341][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 05:34:53,341][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 05:40:42,641][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 05:40:42,641][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 05:46:32,950][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 05:46:32,951][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 05:52:23,966][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 05:52:23,966][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 05:58:13,704][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 05:58:13,705][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 06:04:23,259][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 06:04:23,259][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 06:10:21,951][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 06:10:21,951][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 06:16:11,808][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 06:16:11,808][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 06:22:01,900][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 06:22:01,901][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 06:27:31,894][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 06:27:31,894][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 06:33:21,809][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 06:33:21,809][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 06:38:42,610][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 06:38:42,611][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 06:44:32,843][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 06:44:32,843][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 06:50:22,658][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 06:50:22,658][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 06:56:13,625][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 06:56:13,625][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 07:01:50,456][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 07:01:50,457][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 07:07:40,737][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 07:07:40,737][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 07:13:31,328][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 07:13:31,329][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 07:19:05,581][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 07:19:05,581][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 07:24:55,618][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 07:24:55,619][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 07:30:45,931][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 07:30:45,932][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 07:36:16,409][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 07:36:16,409][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 07:42:06,922][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 07:42:06,922][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 07:47:57,106][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 07:47:57,106][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 07:53:26,529][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 07:53:26,529][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 07:59:19,764][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 07:59:19,764][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 08:05:09,625][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 08:05:09,625][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 08:11:00,610][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 08:11:00,610][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 08:16:50,811][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 08:16:50,811][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 08:22:33,275][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 08:22:33,275][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 08:28:01,188][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 08:28:01,189][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 08:34:47,445][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 08:34:47,446][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 08:40:42,668][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 08:40:42,668][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 08:46:33,035][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 08:46:33,035][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 08:52:22,621][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 08:52:22,622][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 08:58:20,454][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 08:58:20,455][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 09:03:55,616][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 09:03:55,616][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 09:09:45,935][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 09:09:45,935][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 09:15:35,943][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 09:15:35,943][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 09:21:01,908][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 09:21:01,909][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 09:26:51,583][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 09:26:51,583][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 09:33:10,778][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 09:33:10,779][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 09:39:00,476][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 09:39:00,476][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 09:44:51,143][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 09:44:51,143][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 09:50:18,529][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 09:50:18,529][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 09:56:08,548][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 09:56:08,548][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 10:01:32,210][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 10:01:32,211][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 10:07:29,143][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 10:07:29,143][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 10:13:18,783][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 10:13:18,783][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 10:18:40,064][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 10:18:40,065][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 10:24:43,735][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 10:24:43,735][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 10:30:51,216][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 10:30:51,216][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 10:36:41,487][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 10:36:41,487][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 10:42:02,466][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 10:42:02,466][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 10:47:53,219][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 10:47:53,219][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 10:54:05,036][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 10:54:05,036][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 11:00:12,238][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 11:00:12,239][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 11:06:03,055][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 11:06:03,055][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 11:06:17,685][INFO][clojbot.botcore] IN  ::  :m1dnight!~m1dnight@109.130.227.3 PRIVMSG #clojbot :test
-[2014-12-30 11:06:19,486][INFO][clojbot.botcore] IN  ::  :m1dnight!~m1dnight@109.130.227.3 PRIVMSG #clojbot :test
-[2014-12-30 11:06:21,990][INFO][clojbot.botcore] IN  ::  :m1dnight!~m1dnight@109.130.227.3 PRIVMSG #clojbot :a
-[2014-12-30 11:06:24,109][INFO][clojbot.botcore] IN  ::  :m1dnight!~m1dnight@109.130.227.3 PRIVMSG #clojbot :aa
-[2014-12-30 11:06:25,991][INFO][clojbot.botcore] IN  ::  :m1dnight!~m1dnight@109.130.227.3 PRIVMSG #clojbot :a
-[2014-12-30 11:06:28,991][INFO][clojbot.botcore] IN  ::  :m1dnight!~m1dnight@109.130.227.3 PRIVMSG #clojbot :a
-[2014-12-30 11:06:30,990][INFO][clojbot.botcore] IN  ::  :m1dnight!~m1dnight@109.130.227.3 PRIVMSG #clojbot :a
-[2014-12-30 11:06:32,990][INFO][clojbot.botcore] IN  ::  :m1dnight!~m1dnight@109.130.227.3 PRIVMSG #clojbot :a
-[2014-12-30 11:06:34,991][INFO][clojbot.botcore] IN  ::  :m1dnight!~m1dnight@109.130.227.3 PRIVMSG #clojbot :a
-[2014-12-30 11:06:37,991][INFO][clojbot.botcore] IN  ::  :m1dnight!~m1dnight@109.130.227.3 PRIVMSG #clojbot :aa
-[2014-12-30 11:06:39,991][INFO][clojbot.botcore] IN  ::  :m1dnight!~m1dnight@109.130.227.3 PRIVMSG #clojbot :a
-[2014-12-30 11:06:41,990][INFO][clojbot.botcore] IN  ::  :m1dnight!~m1dnight@109.130.227.3 PRIVMSG #clojbot :a
-[2014-12-30 11:06:45,114][INFO][clojbot.botcore] IN  ::  :m1dnight!~m1dnight@109.130.227.3 PRIVMSG #clojbot :a
-[2014-12-30 11:06:46,991][INFO][clojbot.botcore] IN  ::  :m1dnight!~m1dnight@109.130.227.3 PRIVMSG #clojbot :a
-[2014-12-30 11:06:49,991][INFO][clojbot.botcore] IN  ::  :m1dnight!~m1dnight@109.130.227.3 PRIVMSG #clojbot :a
-[2014-12-30 11:06:50,991][INFO][clojbot.botcore] IN  ::  :m1dnight!~m1dnight@109.130.227.3 PRIVMSG #clojbot :a
-[2014-12-30 11:06:53,063][INFO][clojbot.botcore] IN  ::  :m1dnight!~m1dnight@109.130.227.3 PRIVMSG #clojbot :aa
-[2014-12-30 11:11:53,083][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 11:11:53,083][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 11:17:13,462][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 11:17:13,463][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 11:22:34,493][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 11:22:34,493][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 11:28:24,392][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 11:28:24,392][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 11:34:14,492][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 11:34:14,492][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 11:40:16,499][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 11:40:16,499][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 11:45:46,789][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 11:45:46,789][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
-[2014-12-30 11:51:36,636][INFO][clojbot.botcore] IN  ::  PING :irssi.krey.net
-[2014-12-30 11:51:36,636][INFO][clojbot.botcore] OUT ::  PONG :irssi.krey.net
+[2014-12-30 13:27:44,789][INFO][clojbot.botcore] mapping to functions in : :265
+[2014-12-30 13:27:44,790][INFO][clojbot.botcore] functions in  :265 :  nil
+[2014-12-30 13:27:44,790][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 266 clojbot :Current global users 223, max 3015
+[2014-12-30 13:27:44,790][INFO][clojbot.botcore] mapping to functions in : :266
+[2014-12-30 13:27:44,790][INFO][clojbot.botcore] functions in  :266 :  nil
+[2014-12-30 13:27:44,791][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 375 clojbot :- irssi.krey.net Message of the Day - 
+[2014-12-30 13:27:44,791][INFO][clojbot.botcore] mapping to functions in : :375
+[2014-12-30 13:27:44,791][INFO][clojbot.botcore] functions in  :375 :  nil
+[2014-12-30 13:27:44,791][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 24/11/2014 19:37
+[2014-12-30 13:27:44,792][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:27:44,792][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:27:44,792][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  ___              _
+[2014-12-30 13:27:44,792][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:27:44,792][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:27:44,792][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- |_ _|_ __ ___ ___(_)
+[2014-12-30 13:27:44,792][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:27:44,793][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:27:44,793][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  | || '__/ __/ __| |
+[2014-12-30 13:27:44,793][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:27:44,793][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:27:44,793][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  | || |  \__ \__ \ |
+[2014-12-30 13:27:44,793][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:27:44,793][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:27:44,793][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- |___|_|  |___/___/_|
+[2014-12-30 13:27:44,793][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:27:44,794][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:27:44,794][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:27:44,794][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:27:44,794][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:27:44,794][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- admin    Peter  -> peter@krey.net
+[2014-12-30 13:27:44,794][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:27:44,794][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:27:44,794][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- ircops   geert -> geert@irssi.org
+[2014-12-30 13:27:44,794][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:27:44,794][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:27:44,794][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:27:44,794][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:27:44,794][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:27:44,797][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- abuse:   abuse@krey.net
+[2014-12-30 13:27:44,797][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:27:44,797][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:27:44,797][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:27:44,797][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:27:44,797][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:27:44,797][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+[2014-12-30 13:27:44,797][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:27:44,797][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:27:44,797][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:27:44,798][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:27:44,798][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:27:44,798][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   De algemene KreyNet regels gelden op deze server.
+[2014-12-30 13:27:44,798][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:27:44,798][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:27:44,798][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   Je kan ze nalezen op http://www.krey.net
+[2014-12-30 13:27:44,798][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:27:44,798][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:27:44,798][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:27:44,798][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:27:44,798][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:27:44,798][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   In geval van problemen met de irc server kan je steeds
+[2014-12-30 13:27:44,798][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:27:44,798][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:27:44,798][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   terecht bij een van onze operators of via een mailtje.
+[2014-12-30 13:27:44,798][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:27:44,798][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:27:44,799][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:27:44,799][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:27:44,799][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:27:44,799][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   General KreyNet rules are used.  Please read them on
+[2014-12-30 13:27:44,799][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:27:44,799][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:27:44,807][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   http://www.krey.net
+[2014-12-30 13:27:44,807][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:27:44,807][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:27:44,807][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:27:44,807][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:27:44,807][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:27:44,807][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   Any problems with the ircd can be reported to any oper
+[2014-12-30 13:27:44,807][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:27:44,807][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:27:44,808][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   online or via email.
+[2014-12-30 13:27:44,808][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:27:44,808][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:27:44,808][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:27:44,808][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:27:44,808][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:27:44,808][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+[2014-12-30 13:27:44,808][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:27:44,808][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:27:44,808][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:27:44,808][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:27:44,808][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:27:44,808][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:27:44,808][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:27:44,808][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:27:44,808][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- ����
+[2014-12-30 13:27:44,808][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:27:44,808][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:27:44,808][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 376 clojbot :End of MOTD command.
+[2014-12-30 13:27:44,809][INFO][clojbot.botcore] mapping to functions in : :376
+[2014-12-30 13:27:44,809][INFO][clojbot.botcore] functions in  :376 :  nil
+[2014-12-30 13:27:44,809][INFO][clojbot.botcore] IN  ::  :clojbot!~clojbot@109.130.227.3 JOIN :#clojbot
+[2014-12-30 13:27:44,809][INFO][clojbot.botcore] mapping to functions in : :JOIN
+[2014-12-30 13:27:44,809][INFO][clojbot.botcore] functions in  :JOIN :  nil
+[2014-12-30 13:27:44,809][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 353 clojbot = #clojbot :clojbot @m1dnight 
+[2014-12-30 13:27:44,809][INFO][clojbot.botcore] mapping to functions in : :353
+[2014-12-30 13:27:44,809][INFO][clojbot.botcore] functions in  :353 :  nil
+[2014-12-30 13:27:44,809][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 366 clojbot #clojbot :End of NAMES list.
+[2014-12-30 13:27:44,809][INFO][clojbot.botcore] mapping to functions in : :366
+[2014-12-30 13:27:44,809][INFO][clojbot.botcore] functions in  :366 :  nil
+[2014-12-30 13:27:48,266][INFO][clojbot.botcore] IN  ::  :m1dnight!~m1dnight@109.130.227.3 PRIVMSG #clojbot :test
+[2014-12-30 13:27:48,266][INFO][clojbot.botcore] mapping to functions in : :PRIVMSG
+[2014-12-30 13:27:48,286][INFO][clojbot.botcore] functions in  :PRIVMSG :  [{:channel #<ManyToManyChannel clojure.core.async.impl.channels.ManyToManyChannel@6c1c19c6>, :name :reply-module, :type :PRIVMSG, :handler #<core$fn__7023 clojbot.core$fn__7023@1e079362>}]
+[2014-12-30 13:27:48,287][INFO][clojbot.botcore] OUT ::  PRIVMSG #clojbot :im replying on a message
+[2014-12-30 13:27:50,057][INFO][clojbot.botcore] IN  ::  :m1dnight!~m1dnight@109.130.227.3 PRIVMSG #clojbot :test
+[2014-12-30 13:27:50,057][INFO][clojbot.botcore] mapping to functions in : :PRIVMSG
+[2014-12-30 13:27:50,058][INFO][clojbot.botcore] functions in  :PRIVMSG :  [{:channel #<ManyToManyChannel clojure.core.async.impl.channels.ManyToManyChannel@6c1c19c6>, :name :reply-module, :type :PRIVMSG, :handler #<core$fn__7023 clojbot.core$fn__7023@1e079362>}]
+[2014-12-30 13:27:50,059][INFO][clojbot.botcore] OUT ::  PRIVMSG #clojbot :im replying on a message
+[2014-12-30 13:27:52,058][INFO][clojbot.botcore] IN  ::  :m1dnight!~m1dnight@109.130.227.3 PRIVMSG #clojbot :test
+[2014-12-30 13:27:52,059][INFO][clojbot.botcore] mapping to functions in : :PRIVMSG
+[2014-12-30 13:27:52,059][INFO][clojbot.botcore] functions in  :PRIVMSG :  [{:channel #<ManyToManyChannel clojure.core.async.impl.channels.ManyToManyChannel@6c1c19c6>, :name :reply-module, :type :PRIVMSG, :handler #<core$fn__7023 clojbot.core$fn__7023@1e079362>}]
+[2014-12-30 13:27:52,061][INFO][clojbot.botcore] OUT ::  PRIVMSG #clojbot :im replying on a message
+[2014-12-30 13:27:55,072][INFO][clojbot.botcore] IN  ::  :m1dnight!~m1dnight@109.130.227.3 PRIVMSG #clojbot :test
+[2014-12-30 13:27:55,072][INFO][clojbot.botcore] mapping to functions in : :PRIVMSG
+[2014-12-30 13:27:55,073][INFO][clojbot.botcore] functions in  :PRIVMSG :  [{:channel #<ManyToManyChannel clojure.core.async.impl.channels.ManyToManyChannel@6c1c19c6>, :name :reply-module, :type :PRIVMSG, :handler #<core$fn__7023 clojbot.core$fn__7023@1e079362>}]
+[2014-12-30 13:27:55,073][INFO][clojbot.botcore] OUT ::  PRIVMSG #clojbot :im replying on a message
+[2014-12-30 13:27:59,064][INFO][clojbot.botcore] IN  ::  :m1dnight!~m1dnight@109.130.227.3 PRIVMSG #clojbot :test
+[2014-12-30 13:27:59,064][INFO][clojbot.botcore] mapping to functions in : :PRIVMSG
+[2014-12-30 13:27:59,064][INFO][clojbot.botcore] functions in  :PRIVMSG :  [{:channel #<ManyToManyChannel clojure.core.async.impl.channels.ManyToManyChannel@6c1c19c6>, :name :reply-module, :type :PRIVMSG, :handler #<core$fn__7023 clojbot.core$fn__7023@1e079362>}]
+[2014-12-30 13:27:59,065][INFO][clojbot.botcore] OUT ::  PRIVMSG #clojbot :im replying on a message
+[2014-12-30 13:29:59,113][INFO][clojbot.botcore] OUT ::  NICK clojbot
+[2014-12-30 13:29:59,114][INFO][clojbot.botcore] OUT ::  USER clojbot 0 * :Clojure Bot
+[2014-12-30 13:29:59,115][INFO][clojbot.botcore] OUT ::  JOIN #clojbot
+[2014-12-30 13:29:59,120][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 020 * :Please wait while we process your connection.
+[2014-12-30 13:29:59,121][INFO][clojbot.botcore] mapping to functions in : :020
+[2014-12-30 13:29:59,121][INFO][clojbot.botcore] functions in  :020 :  nil
+[2014-12-30 13:30:10,428][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 001 clojbot :Welcome to the Internet Relay Network clojbot!~clojbot@109.130.227.3
+[2014-12-30 13:30:10,429][INFO][clojbot.botcore] mapping to functions in : :001
+[2014-12-30 13:30:10,429][INFO][clojbot.botcore] functions in  :001 :  nil
+[2014-12-30 13:30:10,429][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 002 clojbot :Your host is irssi.krey.net, running version vantage-1.3.0
+[2014-12-30 13:30:10,429][INFO][clojbot.botcore] mapping to functions in : :002
+[2014-12-30 13:30:10,429][INFO][clojbot.botcore] functions in  :002 :  nil
+[2014-12-30 13:30:10,429][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 003 clojbot :This server was created Mon Nov 24 2014 at 19:33:08 UTC
+[2014-12-30 13:30:10,430][INFO][clojbot.botcore] mapping to functions in : :003
+[2014-12-30 13:30:10,430][INFO][clojbot.botcore] functions in  :003 :  nil
+[2014-12-30 13:30:10,430][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 004 clojbot irssi.krey.net vantage-1.3.0 aoOirw abeiIklmnoOpqrRstv
+[2014-12-30 13:30:10,430][INFO][clojbot.botcore] mapping to functions in : :004
+[2014-12-30 13:30:10,430][INFO][clojbot.botcore] functions in  :004 :  nil
+[2014-12-30 13:30:10,431][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 005 clojbot RFC2812 PREFIX=(ov)@+ CHANTYPES=#&!+ MODES=3 CHANLIMIT=#&!+:35 TOPICLEN=350 KICKLEN=350 CHANNELLEN=50 IDCHAN=!:5 CHANMODES=beIR,k,l,imnpstaqrcC :are supported by this server
+[2014-12-30 13:30:10,431][INFO][clojbot.botcore] mapping to functions in : :005
+[2014-12-30 13:30:10,432][INFO][clojbot.botcore] functions in  :005 :  nil
+[2014-12-30 13:30:10,432][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 005 clojbot PENALTY FNC EXCEPTS=e INVEX=I CASEMAPPING=ascii NETWORK=KreyNet :are supported by this server
+[2014-12-30 13:30:10,432][INFO][clojbot.botcore] mapping to functions in : :005
+[2014-12-30 13:30:10,432][INFO][clojbot.botcore] functions in  :005 :  nil
+[2014-12-30 13:30:10,432][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 042 clojbot 3520AADMB :your unique ID
+[2014-12-30 13:30:10,433][INFO][clojbot.botcore] mapping to functions in : :042
+[2014-12-30 13:30:10,433][INFO][clojbot.botcore] functions in  :042 :  nil
+[2014-12-30 13:30:10,433][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 251 clojbot :There are 223 users and 0 services on 4 servers
+[2014-12-30 13:30:10,433][INFO][clojbot.botcore] mapping to functions in : :251
+[2014-12-30 13:30:10,433][INFO][clojbot.botcore] functions in  :251 :  nil
+[2014-12-30 13:30:10,433][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 252 clojbot 5 :operators online
+[2014-12-30 13:30:10,434][INFO][clojbot.botcore] mapping to functions in : :252
+[2014-12-30 13:30:10,434][INFO][clojbot.botcore] functions in  :252 :  nil
+[2014-12-30 13:30:10,434][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 253 clojbot 1 :unknown connections
+[2014-12-30 13:30:10,434][INFO][clojbot.botcore] mapping to functions in : :253
+[2014-12-30 13:30:10,435][INFO][clojbot.botcore] functions in  :253 :  nil
+[2014-12-30 13:30:10,436][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 254 clojbot 221 :channels formed
+[2014-12-30 13:30:10,436][INFO][clojbot.botcore] mapping to functions in : :254
+[2014-12-30 13:30:10,436][INFO][clojbot.botcore] functions in  :254 :  nil
+[2014-12-30 13:30:10,436][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 255 clojbot :I have 71 users, 0 services and 1 servers
+[2014-12-30 13:30:10,437][INFO][clojbot.botcore] mapping to functions in : :255
+[2014-12-30 13:30:10,437][INFO][clojbot.botcore] functions in  :255 :  nil
+[2014-12-30 13:30:10,437][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 265 clojbot :Current local users 71, max 1013
+[2014-12-30 13:30:10,437][INFO][clojbot.botcore] mapping to functions in : :265
+[2014-12-30 13:30:10,437][INFO][clojbot.botcore] functions in  :265 :  nil
+[2014-12-30 13:30:10,437][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 266 clojbot :Current global users 223, max 3015
+[2014-12-30 13:30:10,438][INFO][clojbot.botcore] mapping to functions in : :266
+[2014-12-30 13:30:10,438][INFO][clojbot.botcore] functions in  :266 :  nil
+[2014-12-30 13:30:10,438][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 375 clojbot :- irssi.krey.net Message of the Day - 
+[2014-12-30 13:30:10,438][INFO][clojbot.botcore] mapping to functions in : :375
+[2014-12-30 13:30:10,438][INFO][clojbot.botcore] functions in  :375 :  nil
+[2014-12-30 13:30:10,438][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 24/11/2014 19:37
+[2014-12-30 13:30:10,438][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:30:10,439][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:30:10,439][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  ___              _
+[2014-12-30 13:30:10,439][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:30:10,439][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:30:10,439][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- |_ _|_ __ ___ ___(_)
+[2014-12-30 13:30:10,439][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:30:10,439][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:30:10,439][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  | || '__/ __/ __| |
+[2014-12-30 13:30:10,440][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:30:10,440][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:30:10,440][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  | || |  \__ \__ \ |
+[2014-12-30 13:30:10,440][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:30:10,440][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:30:10,440][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- |___|_|  |___/___/_|
+[2014-12-30 13:30:10,440][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:30:10,440][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:30:10,441][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:30:10,441][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:30:10,441][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:30:10,441][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- admin    Peter  -> peter@krey.net
+[2014-12-30 13:30:10,441][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:30:10,441][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:30:10,441][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- ircops   geert -> geert@irssi.org
+[2014-12-30 13:30:10,441][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:30:10,441][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:30:10,441][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:30:10,441][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:30:10,442][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:30:10,445][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- abuse:   abuse@krey.net
+[2014-12-30 13:30:10,445][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:30:10,445][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:30:10,446][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:30:10,446][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:30:10,446][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:30:10,446][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+[2014-12-30 13:30:10,446][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:30:10,446][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:30:10,446][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:30:10,446][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:30:10,446][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:30:10,446][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   De algemene KreyNet regels gelden op deze server.
+[2014-12-30 13:30:10,446][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:30:10,446][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:30:10,447][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   Je kan ze nalezen op http://www.krey.net
+[2014-12-30 13:30:10,447][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:30:10,447][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:30:10,447][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:30:10,447][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:30:10,447][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:30:10,447][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   In geval van problemen met de irc server kan je steeds
+[2014-12-30 13:30:10,447][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:30:10,447][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:30:10,447][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   terecht bij een van onze operators of via een mailtje.
+[2014-12-30 13:30:10,447][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:30:10,447][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:30:10,447][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:30:10,447][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:30:10,447][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:30:10,447][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   General KreyNet rules are used.  Please read them on
+[2014-12-30 13:30:10,447][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:30:10,448][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:30:10,454][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   http://www.krey.net
+[2014-12-30 13:30:10,454][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:30:10,454][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:30:10,455][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:30:10,455][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:30:10,455][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:30:10,455][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   Any problems with the ircd can be reported to any oper
+[2014-12-30 13:30:10,455][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:30:10,455][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:30:10,455][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   online or via email.
+[2014-12-30 13:30:10,455][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:30:10,455][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:30:10,456][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:30:10,456][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:30:10,456][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:30:10,456][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+[2014-12-30 13:30:10,456][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:30:10,456][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:30:10,456][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:30:10,456][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:30:10,456][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:30:10,456][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:30:10,456][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:30:10,456][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:30:10,456][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- ����
+[2014-12-30 13:30:10,457][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:30:10,457][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:30:10,457][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 376 clojbot :End of MOTD command.
+[2014-12-30 13:30:10,457][INFO][clojbot.botcore] mapping to functions in : :376
+[2014-12-30 13:30:10,457][INFO][clojbot.botcore] functions in  :376 :  nil
+[2014-12-30 13:30:10,457][INFO][clojbot.botcore] IN  ::  :clojbot!~clojbot@109.130.227.3 JOIN :#clojbot
+[2014-12-30 13:30:10,457][INFO][clojbot.botcore] mapping to functions in : :JOIN
+[2014-12-30 13:30:10,457][INFO][clojbot.botcore] functions in  :JOIN :  nil
+[2014-12-30 13:30:10,457][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 353 clojbot = #clojbot :clojbot @m1dnight 
+[2014-12-30 13:30:10,457][INFO][clojbot.botcore] mapping to functions in : :353
+[2014-12-30 13:30:10,457][INFO][clojbot.botcore] functions in  :353 :  nil
+[2014-12-30 13:30:10,457][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 366 clojbot #clojbot :End of NAMES list.
+[2014-12-30 13:30:10,457][INFO][clojbot.botcore] mapping to functions in : :366
+[2014-12-30 13:30:10,458][INFO][clojbot.botcore] functions in  :366 :  nil
+[2014-12-30 13:32:10,411][INFO][clojbot.botcore] OUT ::  NICK clojbot
+[2014-12-30 13:32:10,412][INFO][clojbot.botcore] OUT ::  USER clojbot 0 * :Clojure Bot
+[2014-12-30 13:32:10,413][INFO][clojbot.botcore] OUT ::  JOIN #clojbot
+[2014-12-30 13:32:11,209][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 020 * :Please wait while we process your connection.
+[2014-12-30 13:32:11,209][INFO][clojbot.botcore] mapping to functions in : :020
+[2014-12-30 13:32:11,209][INFO][clojbot.botcore] functions in  :020 :  nil
+[2014-12-30 13:32:14,777][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 001 clojbot :Welcome to the Internet Relay Network clojbot!~clojbot@109.130.227.3
+[2014-12-30 13:32:14,777][INFO][clojbot.botcore] mapping to functions in : :001
+[2014-12-30 13:32:14,777][INFO][clojbot.botcore] functions in  :001 :  nil
+[2014-12-30 13:32:14,777][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 002 clojbot :Your host is irssi.krey.net, running version vantage-1.3.0
+[2014-12-30 13:32:14,777][INFO][clojbot.botcore] mapping to functions in : :002
+[2014-12-30 13:32:14,778][INFO][clojbot.botcore] functions in  :002 :  nil
+[2014-12-30 13:32:14,778][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 003 clojbot :This server was created Mon Nov 24 2014 at 19:33:08 UTC
+[2014-12-30 13:32:14,778][INFO][clojbot.botcore] mapping to functions in : :003
+[2014-12-30 13:32:14,778][INFO][clojbot.botcore] functions in  :003 :  nil
+[2014-12-30 13:32:14,778][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 004 clojbot irssi.krey.net vantage-1.3.0 aoOirw abeiIklmnoOpqrRstv
+[2014-12-30 13:32:14,779][INFO][clojbot.botcore] mapping to functions in : :004
+[2014-12-30 13:32:14,779][INFO][clojbot.botcore] functions in  :004 :  nil
+[2014-12-30 13:32:14,779][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 005 clojbot RFC2812 PREFIX=(ov)@+ CHANTYPES=#&!+ MODES=3 CHANLIMIT=#&!+:35 TOPICLEN=350 KICKLEN=350 CHANNELLEN=50 IDCHAN=!:5 CHANMODES=beIR,k,l,imnpstaqrcC :are supported by this server
+[2014-12-30 13:32:14,779][INFO][clojbot.botcore] mapping to functions in : :005
+[2014-12-30 13:32:14,780][INFO][clojbot.botcore] functions in  :005 :  nil
+[2014-12-30 13:32:14,782][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 005 clojbot PENALTY FNC EXCEPTS=e INVEX=I CASEMAPPING=ascii NETWORK=KreyNet :are supported by this server
+[2014-12-30 13:32:14,782][INFO][clojbot.botcore] mapping to functions in : :005
+[2014-12-30 13:32:14,782][INFO][clojbot.botcore] functions in  :005 :  nil
+[2014-12-30 13:32:14,783][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 042 clojbot 3520AADMD :your unique ID
+[2014-12-30 13:32:14,783][INFO][clojbot.botcore] mapping to functions in : :042
+[2014-12-30 13:32:14,783][INFO][clojbot.botcore] functions in  :042 :  nil
+[2014-12-30 13:32:14,783][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 251 clojbot :There are 223 users and 0 services on 4 servers
+[2014-12-30 13:32:14,783][INFO][clojbot.botcore] mapping to functions in : :251
+[2014-12-30 13:32:14,783][INFO][clojbot.botcore] functions in  :251 :  nil
+[2014-12-30 13:32:14,784][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 252 clojbot 5 :operators online
+[2014-12-30 13:32:14,784][INFO][clojbot.botcore] mapping to functions in : :252
+[2014-12-30 13:32:14,784][INFO][clojbot.botcore] functions in  :252 :  nil
+[2014-12-30 13:32:14,784][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 254 clojbot 221 :channels formed
+[2014-12-30 13:32:14,784][INFO][clojbot.botcore] mapping to functions in : :254
+[2014-12-30 13:32:14,784][INFO][clojbot.botcore] functions in  :254 :  nil
+[2014-12-30 13:32:14,785][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 255 clojbot :I have 71 users, 0 services and 1 servers
+[2014-12-30 13:32:14,785][INFO][clojbot.botcore] mapping to functions in : :255
+[2014-12-30 13:32:14,785][INFO][clojbot.botcore] functions in  :255 :  nil
+[2014-12-30 13:32:14,785][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 265 clojbot :Current local users 71, max 1013
+[2014-12-30 13:32:14,785][INFO][clojbot.botcore] mapping to functions in : :265
+[2014-12-30 13:32:14,785][INFO][clojbot.botcore] functions in  :265 :  nil
+[2014-12-30 13:32:14,786][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 266 clojbot :Current global users 223, max 3015
+[2014-12-30 13:32:14,786][INFO][clojbot.botcore] mapping to functions in : :266
+[2014-12-30 13:32:14,786][INFO][clojbot.botcore] functions in  :266 :  nil
+[2014-12-30 13:32:14,786][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 375 clojbot :- irssi.krey.net Message of the Day - 
+[2014-12-30 13:32:14,786][INFO][clojbot.botcore] mapping to functions in : :375
+[2014-12-30 13:32:14,786][INFO][clojbot.botcore] functions in  :375 :  nil
+[2014-12-30 13:32:14,787][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 24/11/2014 19:37
+[2014-12-30 13:32:14,787][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:32:14,787][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:32:14,787][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  ___              _
+[2014-12-30 13:32:14,787][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:32:14,788][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:32:14,788][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- |_ _|_ __ ___ ___(_)
+[2014-12-30 13:32:14,788][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:32:14,788][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:32:14,788][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  | || '__/ __/ __| |
+[2014-12-30 13:32:14,788][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:32:14,788][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:32:14,789][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  | || |  \__ \__ \ |
+[2014-12-30 13:32:14,789][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:32:14,789][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:32:14,789][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- |___|_|  |___/___/_|
+[2014-12-30 13:32:14,789][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:32:14,789][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:32:14,789][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:32:14,789][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:32:14,790][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:32:14,790][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- admin    Peter  -> peter@krey.net
+[2014-12-30 13:32:14,790][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:32:14,790][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:32:14,790][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- ircops   geert -> geert@irssi.org
+[2014-12-30 13:32:14,790][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:32:14,790][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:32:14,790][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:32:14,791][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:32:14,791][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:32:14,791][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- abuse:   abuse@krey.net
+[2014-12-30 13:32:14,791][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:32:14,791][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:32:14,791][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:32:14,791][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:32:14,792][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:32:14,792][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+[2014-12-30 13:32:14,792][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:32:14,792][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:32:14,792][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:32:14,792][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:32:14,792][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:32:14,792][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   De algemene KreyNet regels gelden op deze server.
+[2014-12-30 13:32:14,793][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:32:14,793][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:32:14,793][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   Je kan ze nalezen op http://www.krey.net
+[2014-12-30 13:32:14,793][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:32:14,793][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:32:14,793][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:32:14,793][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:32:14,793][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:32:14,793][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   In geval van problemen met de irc server kan je steeds
+[2014-12-30 13:32:14,793][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:32:14,793][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:32:14,793][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   terecht bij een van onze operators of via een mailtje.
+[2014-12-30 13:32:14,793][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:32:14,794][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:32:14,794][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:32:14,794][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:32:14,794][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:32:14,794][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   General KreyNet rules are used.  Please read them on
+[2014-12-30 13:32:14,794][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:32:14,794][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:32:14,794][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   http://www.krey.net
+[2014-12-30 13:32:14,794][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:32:14,794][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:32:14,794][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:32:14,794][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:32:14,794][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:32:14,808][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   Any problems with the ircd can be reported to any oper
+[2014-12-30 13:32:14,808][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:32:14,808][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:32:14,808][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   online or via email.
+[2014-12-30 13:32:14,808][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:32:14,808][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:32:14,808][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:32:14,808][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:32:14,808][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:32:14,808][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+[2014-12-30 13:32:14,808][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:32:14,808][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:32:14,808][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:32:14,808][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:32:14,809][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:32:14,809][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:32:14,809][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:32:14,809][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:32:14,809][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- ����
+[2014-12-30 13:32:14,809][INFO][clojbot.botcore] mapping to functions in : :372
+[2014-12-30 13:32:14,809][INFO][clojbot.botcore] functions in  :372 :  nil
+[2014-12-30 13:32:14,809][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 376 clojbot :End of MOTD command.
+[2014-12-30 13:32:14,809][INFO][clojbot.botcore] mapping to functions in : :376
+[2014-12-30 13:32:14,809][INFO][clojbot.botcore] functions in  :376 :  nil
+[2014-12-30 13:32:14,809][INFO][clojbot.botcore] IN  ::  :clojbot!~clojbot@109.130.227.3 JOIN :#clojbot
+[2014-12-30 13:32:14,810][INFO][clojbot.botcore] mapping to functions in : :JOIN
+[2014-12-30 13:32:14,810][INFO][clojbot.botcore] functions in  :JOIN :  nil
+[2014-12-30 13:32:14,810][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 353 clojbot = #clojbot :clojbot @m1dnight 
+[2014-12-30 13:32:14,810][INFO][clojbot.botcore] mapping to functions in : :353
+[2014-12-30 13:32:14,810][INFO][clojbot.botcore] functions in  :353 :  nil
+[2014-12-30 13:32:14,810][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 366 clojbot #clojbot :End of NAMES list.
+[2014-12-30 13:32:14,810][INFO][clojbot.botcore] mapping to functions in : :366
+[2014-12-30 13:32:14,811][INFO][clojbot.botcore] functions in  :366 :  nil
+[2014-12-30 13:32:16,257][INFO][clojbot.botcore] IN  ::  :m1dnight!~m1dnight@109.130.227.3 PRIVMSG #clojbot :test
+[2014-12-30 13:32:16,258][INFO][clojbot.botcore] mapping to functions in : :PRIVMSG
+[2014-12-30 13:32:16,273][INFO][clojbot.botcore] functions in  :PRIVMSG :  [{:channel #<ManyToManyChannel clojure.core.async.impl.channels.ManyToManyChannel@495e160e>, :name :reply-module, :type :PRIVMSG, :handler #<core$fn__44 clojbot.core$fn__44@3bec7d05>}]
+[2014-12-30 13:32:16,273][INFO][clojbot.botcore] OUT ::  PRIVMSG m1dnight!~m1dnight@109.130.227.3 :im replying on a message
+[2014-12-30 13:32:55,833][INFO][clojbot.botcore] IN  ::  :m1dnight!~m1dnight@109.130.227.3 PRIVMSG #clojbot :test
+[2014-12-30 13:32:55,834][INFO][clojbot.botcore] mapping to functions in : :PRIVMSG
+[2014-12-30 13:32:55,834][INFO][clojbot.botcore] functions in  :PRIVMSG :  [{:channel #<ManyToManyChannel clojure.core.async.impl.channels.ManyToManyChannel@495e160e>, :name :reply-module, :type :PRIVMSG, :handler #<core$fn__44 clojbot.core$fn__44@3bec7d05>}]
+[2014-12-30 13:32:55,835][INFO][clojbot.botcore] OUT ::  PRIVMSG m1dnight!~m1dnight@109.130.227.3 :im replying on a message
+[2014-12-30 13:33:01,192][INFO][clojbot.botcore] OUT ::  NICK clojbot
+[2014-12-30 13:33:01,193][INFO][clojbot.botcore] OUT ::  USER clojbot 0 * :Clojure Bot
+[2014-12-30 13:33:01,195][INFO][clojbot.botcore] OUT ::  JOIN #clojbot
+[2014-12-30 13:33:01,198][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 020 * :Please wait while we process your connection.
+[2014-12-30 13:33:05,517][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 001 clojbot :Welcome to the Internet Relay Network clojbot!~clojbot@109.130.227.3
+[2014-12-30 13:33:05,517][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 002 clojbot :Your host is irssi.krey.net, running version vantage-1.3.0
+[2014-12-30 13:33:05,518][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 003 clojbot :This server was created Mon Nov 24 2014 at 19:33:08 UTC
+[2014-12-30 13:33:05,518][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 004 clojbot irssi.krey.net vantage-1.3.0 aoOirw abeiIklmnoOpqrRstv
+[2014-12-30 13:33:05,518][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 005 clojbot RFC2812 PREFIX=(ov)@+ CHANTYPES=#&!+ MODES=3 CHANLIMIT=#&!+:35 TOPICLEN=350 KICKLEN=350 CHANNELLEN=50 IDCHAN=!:5 CHANMODES=beIR,k,l,imnpstaqrcC :are supported by this server
+[2014-12-30 13:33:05,519][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 005 clojbot PENALTY FNC EXCEPTS=e INVEX=I CASEMAPPING=ascii NETWORK=KreyNet :are supported by this server
+[2014-12-30 13:33:05,519][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 042 clojbot 3520AADME :your unique ID
+[2014-12-30 13:33:05,519][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 251 clojbot :There are 223 users and 0 services on 4 servers
+[2014-12-30 13:33:05,522][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 252 clojbot 5 :operators online
+[2014-12-30 13:33:05,523][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 254 clojbot 221 :channels formed
+[2014-12-30 13:33:05,523][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 255 clojbot :I have 71 users, 0 services and 1 servers
+[2014-12-30 13:33:05,524][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 265 clojbot :Current local users 71, max 1013
+[2014-12-30 13:33:05,524][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 266 clojbot :Current global users 223, max 3015
+[2014-12-30 13:33:05,524][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 375 clojbot :- irssi.krey.net Message of the Day - 
+[2014-12-30 13:33:05,525][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 24/11/2014 19:37
+[2014-12-30 13:33:05,525][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  ___              _
+[2014-12-30 13:33:05,526][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- |_ _|_ __ ___ ___(_)
+[2014-12-30 13:33:05,528][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  | || '__/ __/ __| |
+[2014-12-30 13:33:05,528][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  | || |  \__ \__ \ |
+[2014-12-30 13:33:05,529][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- |___|_|  |___/___/_|
+[2014-12-30 13:33:05,529][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:33:05,529][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- admin    Peter  -> peter@krey.net
+[2014-12-30 13:33:05,529][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- ircops   geert -> geert@irssi.org
+[2014-12-30 13:33:05,530][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:33:05,530][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- abuse:   abuse@krey.net
+[2014-12-30 13:33:05,530][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:33:05,530][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+[2014-12-30 13:33:05,530][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:33:05,530][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   De algemene KreyNet regels gelden op deze server.
+[2014-12-30 13:33:05,531][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   Je kan ze nalezen op http://www.krey.net
+[2014-12-30 13:33:05,531][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:33:05,531][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   In geval van problemen met de irc server kan je steeds
+[2014-12-30 13:33:05,531][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   terecht bij een van onze operators of via een mailtje.
+[2014-12-30 13:33:05,531][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:33:05,531][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   General KreyNet rules are used.  Please read them on
+[2014-12-30 13:33:05,531][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   http://www.krey.net
+[2014-12-30 13:33:05,532][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:33:05,543][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   Any problems with the ircd can be reported to any oper
+[2014-12-30 13:33:05,543][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   online or via email.
+[2014-12-30 13:33:05,544][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:33:05,544][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+[2014-12-30 13:33:05,544][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:33:05,544][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:33:05,544][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- ����
+[2014-12-30 13:33:05,545][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 376 clojbot :End of MOTD command.
+[2014-12-30 13:33:05,545][INFO][clojbot.botcore] IN  ::  :clojbot!~clojbot@109.130.227.3 JOIN :#clojbot
+[2014-12-30 13:33:05,545][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 353 clojbot = #clojbot :clojbot @m1dnight 
+[2014-12-30 13:33:05,545][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 366 clojbot #clojbot :End of NAMES list.
+[2014-12-30 13:33:09,638][INFO][clojbot.botcore] IN  ::  :m1dnight!~m1dnight@109.130.227.3 PRIVMSG #clojbot :test
+[2014-12-30 13:33:09,639][INFO][clojbot.botcore] OUT ::  PRIVMSG m1dnight!~m1dnight@109.130.227.3 :im replying on a message
+[2014-12-30 13:33:12,449][INFO][clojbot.botcore] IN  ::  :m1dnight!~m1dnight@109.130.227.3 PRIVMSG #clojbot :test
+[2014-12-30 13:33:12,450][INFO][clojbot.botcore] OUT ::  PRIVMSG m1dnight!~m1dnight@109.130.227.3 :im replying on a message
+[2014-12-30 13:33:15,061][INFO][clojbot.botcore] IN  ::  :m1dnight!~m1dnight@109.130.227.3 PRIVMSG #clojbot :test
+[2014-12-30 13:33:15,062][INFO][clojbot.botcore] OUT ::  PRIVMSG m1dnight!~m1dnight@109.130.227.3 :im replying on a message
+[2014-12-30 13:35:11,114][INFO][clojbot.botcore] OUT ::  NICK clojbot
+[2014-12-30 13:35:11,115][INFO][clojbot.botcore] OUT ::  USER clojbot 0 * :Clojure Bot
+[2014-12-30 13:35:11,115][INFO][clojbot.botcore] OUT ::  JOIN #clojbot
+[2014-12-30 13:35:12,237][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 020 * :Please wait while we process your connection.
+[2014-12-30 13:35:15,947][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 001 clojbot :Welcome to the Internet Relay Network clojbot!~clojbot@109.130.227.3
+[2014-12-30 13:35:15,948][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 002 clojbot :Your host is irssi.krey.net, running version vantage-1.3.0
+[2014-12-30 13:35:15,948][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 003 clojbot :This server was created Mon Nov 24 2014 at 19:33:08 UTC
+[2014-12-30 13:35:15,948][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 004 clojbot irssi.krey.net vantage-1.3.0 aoOirw abeiIklmnoOpqrRstv
+[2014-12-30 13:35:15,949][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 005 clojbot RFC2812 PREFIX=(ov)@+ CHANTYPES=#&!+ MODES=3 CHANLIMIT=#&!+:35 TOPICLEN=350 KICKLEN=350 CHANNELLEN=50 IDCHAN=!:5 CHANMODES=beIR,k,l,imnpstaqrcC :are supported by this server
+[2014-12-30 13:35:15,949][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 005 clojbot PENALTY FNC EXCEPTS=e INVEX=I CASEMAPPING=ascii NETWORK=KreyNet :are supported by this server
+[2014-12-30 13:35:15,949][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 042 clojbot 3520AADMG :your unique ID
+[2014-12-30 13:35:15,950][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 251 clojbot :There are 224 users and 0 services on 4 servers
+[2014-12-30 13:35:15,950][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 252 clojbot 5 :operators online
+[2014-12-30 13:35:15,950][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 253 clojbot 1 :unknown connections
+[2014-12-30 13:35:15,950][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 254 clojbot 221 :channels formed
+[2014-12-30 13:35:15,951][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 255 clojbot :I have 71 users, 0 services and 1 servers
+[2014-12-30 13:35:15,951][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 265 clojbot :Current local users 71, max 1013
+[2014-12-30 13:35:15,952][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 266 clojbot :Current global users 224, max 3015
+[2014-12-30 13:35:15,953][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 375 clojbot :- irssi.krey.net Message of the Day - 
+[2014-12-30 13:35:15,954][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 24/11/2014 19:37
+[2014-12-30 13:35:15,954][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  ___              _
+[2014-12-30 13:35:15,954][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- |_ _|_ __ ___ ___(_)
+[2014-12-30 13:35:15,954][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  | || '__/ __/ __| |
+[2014-12-30 13:35:15,954][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  | || |  \__ \__ \ |
+[2014-12-30 13:35:15,955][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- |___|_|  |___/___/_|
+[2014-12-30 13:35:15,955][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:35:15,955][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- admin    Peter  -> peter@krey.net
+[2014-12-30 13:35:15,955][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- ircops   geert -> geert@irssi.org
+[2014-12-30 13:35:15,956][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:35:15,956][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- abuse:   abuse@krey.net
+[2014-12-30 13:35:15,956][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:35:15,956][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+[2014-12-30 13:35:15,956][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:35:15,957][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   De algemene KreyNet regels gelden op deze server.
+[2014-12-30 13:35:15,957][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   Je kan ze nalezen op http://www.krey.net
+[2014-12-30 13:35:15,957][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:35:15,957][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   In geval van problemen met de irc server kan je steeds
+[2014-12-30 13:35:15,957][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   terecht bij een van onze operators of via een mailtje.
+[2014-12-30 13:35:15,957][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:35:15,958][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   General KreyNet rules are used.  Please read them on
+[2014-12-30 13:35:15,972][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   http://www.krey.net
+[2014-12-30 13:35:15,973][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:35:15,973][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   Any problems with the ircd can be reported to any oper
+[2014-12-30 13:35:15,973][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   online or via email.
+[2014-12-30 13:35:15,973][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:35:15,974][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+[2014-12-30 13:35:15,974][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:35:15,974][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2014-12-30 13:35:15,974][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- ����
+[2014-12-30 13:35:15,975][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 376 clojbot :End of MOTD command.
+[2014-12-30 13:35:15,975][INFO][clojbot.botcore] IN  ::  :clojbot!~clojbot@109.130.227.3 JOIN :#clojbot
+[2014-12-30 13:35:15,975][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 353 clojbot = #clojbot :clojbot @m1dnight 
+[2014-12-30 13:35:15,976][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 366 clojbot #clojbot :End of NAMES list.
+[2014-12-30 13:36:31,751][INFO][clojbot.botcore] IN  ::  :m1dnight!~m1dnight@109.130.227.3 PRIVMSG #clojbot :test
+[2014-12-30 13:36:31,752][INFO][clojbot.botcore] OUT ::  PRIVMSG m1dnight!~m1dnight@109.130.227.3 :im replying on a message
