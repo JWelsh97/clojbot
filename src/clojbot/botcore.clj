@@ -24,6 +24,7 @@
 
 
 (defn- dispatch-message
+  "Dispatches a message to the proper channels (i.e., modules)."
   [msg botstate]
   (let [cmd (keyword (:command msg))]
     (doall (map #(as/>!! % msg) (cmd (:in-channels @botstate))))))
@@ -67,6 +68,7 @@
 
 
 (defn init-bot
+  "Creates a bot and returns a ref containg all neede data."
   [server user]
   (let [socket   (create-socket server)
         botstate (ref {:socket socket :user user :out-channel (as/chan) :in-channels {:PRIVMSG []}})
@@ -78,6 +80,7 @@
 
 
 (defn destroy-bot
+  "Kill the bot."
   [bot]
   (dosync
    (alter bot (fn [b] (assoc b :exit true)))))
@@ -91,11 +94,11 @@
     (as/>!! chan message)))
 
 
-(defn- eat-messages
-  [])
-
 (defn connect-module
-  [botstate handler]
+  "Attaches a module to a running bot by adding the channel to the bot's state.
+   Runs the module function in a loop and keeps feeding it messages."
+  [botstate
+  handler]
   (let [type     (:type handler)
         mod-chan (as/chan)]
     ;; Add the module's channel to the proper submap.
