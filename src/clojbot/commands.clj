@@ -26,6 +26,8 @@
 
 
 (defn nick
-  "Changes the nick of the bot."
+  "Changes the nick of the bot. Not certain this will succeed.
+   Nick could be taken or invalid."
+  ;;; TODO Additional checks are needed here. Perhaps wait for a reply.
   [bot new-nick]
   (core/write-message bot (str/join " " (list "NICK" new-nick))))

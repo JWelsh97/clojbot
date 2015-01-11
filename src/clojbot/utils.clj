@@ -8,6 +8,3 @@
   (zipmap
        [:original :sender :command :channel :message]
        (re-matches #"^(?:[:](\S+) )?(\S+)(?: (?!:)(.+?))?(?: [:](.+))?$" message)))
-
-
-

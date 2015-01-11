@@ -6,19 +6,19 @@
             [clojure.core.async    :as as])
   (:gen-class))
 
+;; TODO On a message that comes in of a failed nick, rotate the list of
+;; alternates or somethign.
+
+;; Some temporary configuration. Best to abstract this properly.
 (def kreynet {:name "irssi.be.krey.net" :port 6667})
 (def user    {:name "Clojure Bot" :nick "clojbot" :alternates ["clojbot_" "clojbot__"]})
 
 
-;;; Channel message: :m1dnight!~m1dnight@109.130.227.3 PRIVMSG #clojbot :message in #clojure
-;;; Private message: :m1dnight!~m1dnight@109.130.227.3 PRIVMSG fabiola :private
-;;; message
-
-
+;; Test module. Will reply to *everything* in a PM.
 (def testmodule {:name    :reply-module
                  :type    :PRIVMSG
                  :handler (fn [bot message]
-                            (cmd/send-message bot (:sender message) ":im replying on a message"))})
+                            (cmd/send-message bot (:channel message) ":im replying on a message"))})
 (defn -main
   "I don't do a whole lot."
   [& args]
