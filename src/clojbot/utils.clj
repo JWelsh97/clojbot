@@ -2,8 +2,7 @@
   (:require [clojure.tools.logging :as log]))
 
 (defn destruct-raw-message
-  "Destructs a message into an array:
-  [<original message> <sender> <type>  <channel> <message>]"
+  "Destructs a message into a map."
   [message]
   (zipmap
        [:original :sender :command :channel :message]

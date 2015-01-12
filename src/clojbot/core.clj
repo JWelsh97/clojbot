@@ -18,7 +18,7 @@
 (def testmodule {:name    :reply-module
                  :type    :PRIVMSG
                  :handler (fn [bot message]
-                            (cmd/send-message bot (:channel message) ":im replying on a message"))})
+                            (cmd/send-message bot (:sender message) ":im replying on a message"))})
 (defn -main
   "I don't do a whole lot."
   [& args]
