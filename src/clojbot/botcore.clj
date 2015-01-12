@@ -40,7 +40,6 @@
   (while (nil? (:exit @botstate))
     ;; Read in a message from the connection. Dispatch.
     (let [msg (read-in (:socket @botstate))]
-      ;; If it is our own message drop it.
       (log/info "IN  :: " (:original msg))
       (cond
        ;; Server said we are disconnecting.
@@ -49,12 +48,14 @@
        ;; Server sent a ping, reply with a ping.
        (re-find #"^PING" (:original msg))
        (write-out (:socket @botstate) (str "PONG "  (re-find #":.*" (:original msg))))
+       ;; Dispatch function will take care of it.
        :else
        (future (dispatch-message msg botstate)))))
   (log/info "socket-read-loop done"))
 
 
-;;; TODO Make this function timeout.
+;;; TODO Make this function timeout. If we shut down the bot we will only stop the 
+;;; thread when we receive another message. Timeout to retry read.
 (defn- socket-write-loop
   "As long as :exit in the botstate is nil it will read from the out-channel.
   Messages are stored here in raw format to send to the IRC server."
@@ -83,7 +84,7 @@
                   {:socket      socket
                    :user        user
                    :out-channel (as/chan)
-                   :in-channels {:PRIVMSG []}
+                   :in-channels {}
                    })
         ;; Run the read and write socket each in their own thread.
         in-loop  (Thread. #(socket-read-loop botstate))
