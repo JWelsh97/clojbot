@@ -376,3 +376,58 @@
 [2015-01-12 01:03:39,317][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 366 clojbot #clojbot :End of NAMES list.
 [2015-01-12 01:04:39,279][INFO][clojbot.botcore] IN  ::  :m1dnight!~m1dnight@109.130.154.24 PRIVMSG #clojbot :test
 [2015-01-12 01:04:39,281][INFO][clojbot.botcore] OUT ::  PRIVMSG #clojbot :im replying on a message
+[2015-01-12 01:09:43,669][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 020 * :Please wait while we process your connection.
+[2015-01-12 01:09:43,669][INFO][clojbot.botcore] OUT ::  NICK clojbot
+[2015-01-12 01:09:43,671][INFO][clojbot.botcore] OUT ::  USER clojbot 0 * :Clojure Bot
+[2015-01-12 01:09:43,672][INFO][clojbot.botcore] OUT ::  JOIN #clojbot
+[2015-01-12 01:09:47,567][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 001 clojbot :Welcome to the Internet Relay Network clojbot!~clojbot@109.130.154.24
+[2015-01-12 01:09:47,567][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 002 clojbot :Your host is irssi.krey.net, running version vantage-1.3.0
+[2015-01-12 01:09:47,569][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 003 clojbot :This server was created Mon Nov 24 2014 at 19:33:08 UTC
+[2015-01-12 01:09:47,570][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 004 clojbot irssi.krey.net vantage-1.3.0 aoOirw abeiIklmnoOpqrRstv
+[2015-01-12 01:09:47,570][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 005 clojbot RFC2812 PREFIX=(ov)@+ CHANTYPES=#&!+ MODES=3 CHANLIMIT=#&!+:35 TOPICLEN=350 KICKLEN=350 CHANNELLEN=50 IDCHAN=!:5 CHANMODES=beIR,k,l,imnpstaqrcC :are supported by this server
+[2015-01-12 01:09:47,571][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 005 clojbot PENALTY FNC EXCEPTS=e INVEX=I CASEMAPPING=ascii NETWORK=KreyNet :are supported by this server
+[2015-01-12 01:09:47,571][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 042 clojbot 3520AAEN6 :your unique ID
+[2015-01-12 01:09:47,571][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 251 clojbot :There are 209 users and 0 services on 4 servers
+[2015-01-12 01:09:47,571][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 252 clojbot 5 :operators online
+[2015-01-12 01:09:47,572][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 254 clojbot 210 :channels formed
+[2015-01-12 01:09:47,572][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 255 clojbot :I have 60 users, 0 services and 1 servers
+[2015-01-12 01:09:47,575][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 265 clojbot :Current local users 60, max 1013
+[2015-01-12 01:09:47,575][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 266 clojbot :Current global users 209, max 3015
+[2015-01-12 01:09:47,575][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 375 clojbot :- irssi.krey.net Message of the Day - 
+[2015-01-12 01:09:47,578][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 24/11/2014 19:37
+[2015-01-12 01:09:47,578][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  ___              _
+[2015-01-12 01:09:47,578][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- |_ _|_ __ ___ ___(_)
+[2015-01-12 01:09:47,578][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  | || '__/ __/ __| |
+[2015-01-12 01:09:47,578][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-  | || |  \__ \__ \ |
+[2015-01-12 01:09:47,578][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- |___|_|  |___/___/_|
+[2015-01-12 01:09:47,578][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2015-01-12 01:09:47,578][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- admin    Peter  -> peter@krey.net
+[2015-01-12 01:09:47,578][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- ircops   geert -> geert@irssi.org
+[2015-01-12 01:09:47,579][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2015-01-12 01:09:47,579][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- abuse:   abuse@krey.net
+[2015-01-12 01:09:47,579][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2015-01-12 01:09:47,579][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+[2015-01-12 01:09:47,579][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2015-01-12 01:09:47,579][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   De algemene KreyNet regels gelden op deze server.
+[2015-01-12 01:09:47,579][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   Je kan ze nalezen op http://www.krey.net
+[2015-01-12 01:09:47,579][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2015-01-12 01:09:47,579][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   In geval van problemen met de irc server kan je steeds
+[2015-01-12 01:09:47,579][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   terecht bij een van onze operators of via een mailtje.
+[2015-01-12 01:09:47,580][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2015-01-12 01:09:47,580][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   General KreyNet rules are used.  Please read them on
+[2015-01-12 01:09:47,580][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   http://www.krey.net
+[2015-01-12 01:09:47,580][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2015-01-12 01:09:47,593][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   Any problems with the ircd can be reported to any oper
+[2015-01-12 01:09:47,593][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :-   online or via email.
+[2015-01-12 01:09:47,593][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2015-01-12 01:09:47,593][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+[2015-01-12 01:09:47,593][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2015-01-12 01:09:47,593][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- 
+[2015-01-12 01:09:47,593][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 372 clojbot :- ����
+[2015-01-12 01:09:47,593][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 376 clojbot :End of MOTD command.
+[2015-01-12 01:09:47,594][INFO][clojbot.botcore] IN  ::  :clojbot!~clojbot@109.130.154.24 JOIN :#clojbot
+[2015-01-12 01:09:47,594][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 353 clojbot = #clojbot :clojbot m1dnight 
+[2015-01-12 01:09:47,594][INFO][clojbot.botcore] IN  ::  :irssi.krey.net 366 clojbot #clojbot :End of NAMES list.
+[2015-01-12 01:10:00,197][INFO][clojbot.botcore] IN  ::  :m1dnight!~m1dnight@109.130.154.24 PRIVMSG #clojbot :test
+[2015-01-12 01:10:00,198][INFO][clojbot.botcore] OUT ::  PRIVMSG #clojbot :im replying on a message
+[2015-01-12 01:10:02,244][INFO][clojbot.botcore] IN  ::  :m1dnight!~m1dnight@109.130.154.24 PART #clojbot :WeeChat 0.4.2
