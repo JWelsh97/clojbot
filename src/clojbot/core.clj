@@ -11,6 +11,7 @@
 
 ;; Some temporary configuration. Best to abstract this properly.
 (def kreynet {:name "verne.freenode.net" :port 6667})
+(def channels ["#clojbot" "#clojbot2"])
 (def user    {:name "Clojure Bot" :nick "clojbot" :alternates ["clojbot_" "clojbot__"]})
 
 
@@ -19,13 +20,16 @@
                  :type    :PRIVMSG
                  :handler (fn [bot message]
                             (cmd/send-message bot (:channel message) "im replying on a message"))})
+
+(def pmreply {:name :pm-reply
+              :type :PRIVMSG
+              :handler (fn [bot message]
+                         (cmd/send-message bot (:nickname message) "here is your pm sir"))})
 (defn -main
   "I don't do a whole lot."
   [& args]
   (let [bot (core/init-bot kreynet user)]
     (cmd/register bot user)
-    (cmd/join bot "#clojbot")
-    (Thread/sleep 10000)
-    (cmd/nick bot "m1dnight___")
-    ;;(core/connect-module bot testmodule)
-    (Thread/sleep 5000)))
+    (cmd/join bot channels)
+    (core/connect-module bot pmreply)
+    (core/connect-module bot testmodule)))

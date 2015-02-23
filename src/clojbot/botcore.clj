@@ -7,6 +7,7 @@
             [clojure.core.async    :as as]
             [clojure.tools.logging :as log]))
 
+(declare reconnect)
 
 (defn- change-nick
   [bot nickname]
@@ -15,7 +16,7 @@
    (log/info "## :: " "Nickname changed to " nickname)))
 
 
-(defn- write-out 
+(defn- write-out
   "Writes a raw line to the socket."
   [socket msg]
   (log/info "OUT :: " msg)
@@ -48,24 +49,27 @@
     ;; Read in a message from the connection. Dispatch.
     (let [msg (read-in (:socket @botstate))]
       (log/info "IN  :: " (:original msg))
-      (log/info "--> " msg)
+      ;;(log/info "--> " msg)
       (cond
+       ;; QUIT message. Could be anything really (i.e., I don't know)
+       (re-find #"^QUIT :" (:original msg))
+       (reconnect botstate)
        ;; Server said we are disconnecting.
        (re-find #"^ERROR :Closing Link:" (:original msg))
        (dosync (alter botstate  merge {:exit true}))
        ;; Server sent a ping, reply with a ping.
        (re-find #"^PING" (:original msg))
        (write-out (:socket @botstate) (str "PONG "  (re-find #":.*" (:original msg))))
-       ;; NICK (we get this after a nickchange)
+       ;; NICK (we get this after a nickchange, if it succeeded)
        (= "NICK" (:command msg))
        (change-nick botstate (:message msg))
        ;; Dispatch function will take care of it.
        :else
        (future (dispatch-message msg botstate)))))
-  (log/info "socket-read-loop done"))
+  (log/info "socket-read-loop quit"))
 
 
-;;; TODO Make this function timeout. If we shut down the bot we will only stop the 
+;;; TODO Make this function timeout. If we shut down the bot we will only stop the
 ;;; thread when we receive another message. Timeout to retry read.
 (defn- socket-write-loop
   "As long as :exit in the botstate is nil it will read from the out-channel.
@@ -74,19 +78,20 @@
   (while (nil? (:exit @botstate))
     (when-let [out-msg (as/<!! (:out-channel  @botstate))]
       (write-out (:socket @botstate) out-msg)))
-  (log/info "socket-write-loop done"))
+  (log/info "socket-write-loop quit"))
 
 
 (defn- create-socket
   "Sets up a socket to connect to the IRC network defined in the server map.
   Returns a reference to a ref containing an :in and :out stream."
-  [server] 
+  [server]
   (try
     (let [socket (Socket. (:name server) (:port server))
           in     (BufferedReader. (InputStreamReader. (.getInputStream socket)))
           out    (PrintWriter. (.getOutputStream socket))]
       {:in in :out out})
     (catch java.net.UnknownHostException e nil)))
+
 
 
 (defn init-bot
@@ -98,7 +103,8 @@
   (let [socket (create-socket server)]
     (if socket
       (let [botstate (ref
-                      {:socket      socket
+                      {:serverinfo  server
+                       :socket      socket
                        :user        user
                        :out-channel (as/chan)
                        :in-channels {}
@@ -110,11 +116,6 @@
         (.start out-loop)
         botstate)
       nil)))
-
-
-(defn reconnect
-  [bot]
-  )
 
 
 (defn destroy-bot
@@ -135,7 +136,7 @@
 
 (defn connect-module
   "Attaches a module to a running bot by adding the channel to the bot's state.
-   Runs the module function in a loop and keeps feeding it messages."
+  Runs the module function in a loop and keeps feeding it messages."
   [botstate handler]
   (let [type     (:type handler)
         modfn    (:handler handler)
@@ -144,8 +145,8 @@
     (dosync
      (alter botstate (fn [b]
                        (update-in b
-                        [:in-channels type]
-                        conj mod-chan))))
+                                  [:in-channels type]
+                                  conj mod-chan))))
     ;; Start of a future that will run this module.
     (future
       (while (nil? (:exit @botstate))

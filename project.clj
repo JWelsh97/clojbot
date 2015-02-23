@@ -11,5 +11,7 @@
                                                     com.sun.jmdk/jmxtools
                                                     com.sun.jmx/jmxri]]
                  [org.clojure/tools.logging "0.3.1"]
-                 [org.clojure/core.async "0.1.346.0-17112a-alpha"]]
+                 [org.clojure/core.async "0.1.346.0-17112a-alpha"]
+                 [org.clojure/java.jdbc "0.3.6"]
+                 [postgresql "9.1-901.jdbc4"]]
   :aot [:all])
