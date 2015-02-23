@@ -8,6 +8,13 @@
             [clojure.tools.logging :as log]))
 
 
+(defn- change-nick
+  [bot nickname]
+  (dosync
+   (alter bot #(update-in % [:user :nick] (fn [_] nickname)))
+   (log/info "## :: " "Nickname changed to " nickname)))
+
+
 (defn- write-out 
   "Writes a raw line to the socket."
   [socket msg]
@@ -28,10 +35,10 @@
   channels (i.e., modules). The message is sent to all modules that are
   registered under a certain message. E.g., :JOIN, or :PRIVMSG"
   [msg botstate]
-  (let [cmd (keyword (:command msg))]
+  (let [msgtype (keyword (:command msg))]
     (doall
      (map #(as/>!! % msg)
-          (cmd (:in-channels @botstate))))))
+          (msgtype (:in-channels @botstate))))))
 
 
 (defn- socket-read-loop
@@ -41,6 +48,7 @@
     ;; Read in a message from the connection. Dispatch.
     (let [msg (read-in (:socket @botstate))]
       (log/info "IN  :: " (:original msg))
+      (log/info "--> " msg)
       (cond
        ;; Server said we are disconnecting.
        (re-find #"^ERROR :Closing Link:" (:original msg))
@@ -48,6 +56,9 @@
        ;; Server sent a ping, reply with a ping.
        (re-find #"^PING" (:original msg))
        (write-out (:socket @botstate) (str "PONG "  (re-find #":.*" (:original msg))))
+       ;; NICK (we get this after a nickchange)
+       (= "NICK" (:command msg))
+       (change-nick botstate (:message msg))
        ;; Dispatch function will take care of it.
        :else
        (future (dispatch-message msg botstate)))))
@@ -69,29 +80,41 @@
 (defn- create-socket
   "Sets up a socket to connect to the IRC network defined in the server map.
   Returns a reference to a ref containing an :in and :out stream."
-  [server]
-  (let [socket (Socket. (:name server) (:port server))
-        in     (BufferedReader. (InputStreamReader. (.getInputStream socket)))
-        out    (PrintWriter. (.getOutputStream socket))]
-    {:in in :out out}))
+  [server] 
+  (try
+    (let [socket (Socket. (:name server) (:port server))
+          in     (BufferedReader. (InputStreamReader. (.getInputStream socket)))
+          out    (PrintWriter. (.getOutputStream socket))]
+      {:in in :out out})
+    (catch java.net.UnknownHostException e nil)))
 
 
 (defn init-bot
-  "Creates a bot and returns a ref containg all needed data."
+  "Creates a bot. Expects a map that contains the name of the server
+  and the port of the server. Second argument is a map that defines
+  the name, nickname and alternate nicknames of this bot.
+  Returns nil if it was not possible to connect to the network."
   [server user]
-  (let [socket   (create-socket server)
-        botstate (ref
-                  {:socket      socket
-                   :user        user
-                   :out-channel (as/chan)
-                   :in-channels {}
-                   })
-        ;; Run the read and write socket each in their own thread.
-        in-loop  (Thread. #(socket-read-loop botstate))
-        out-loop (Thread. #(socket-write-loop botstate))]
-    (.start in-loop)
-    (.start out-loop)
-    botstate))
+  (let [socket (create-socket server)]
+    (if socket
+      (let [botstate (ref
+                      {:socket      socket
+                       :user        user
+                       :out-channel (as/chan)
+                       :in-channels {}
+                       })
+            ;; Run the read and write socket each in their own thread.
+            in-loop  (Thread. #(socket-read-loop botstate))
+            out-loop (Thread. #(socket-write-loop botstate))]
+        (.start in-loop)
+        (.start out-loop)
+        botstate)
+      nil)))
+
+
+(defn reconnect
+  [bot]
+  )
 
 
 (defn destroy-bot

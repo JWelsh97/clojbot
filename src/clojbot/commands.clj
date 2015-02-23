@@ -5,6 +5,11 @@
             [clojbot.botcore       :as core]))
 
 
+(defn send-ping
+  [bot]
+  (dosync (core/write-message bot "PING 1234")))
+
+
 (defn register
   "Sets up the nickname and user information on the server."
   [bot user]
@@ -22,7 +27,7 @@
 (defn send-message
   "Sends a simple message to a channel or user."
   [bot channel message]
-  (core/write-message bot (str/join " " (list "PRIVMSG" channel message))))
+  (core/write-message bot (str/join " " (list "PRIVMSG" channel (str ":" message)))))
 
 
 (defn nick
