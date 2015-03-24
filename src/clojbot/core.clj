@@ -16,7 +16,7 @@
                :port      6667
                :channels  ["#clojbot" "#clojbot2"]
                :name      "Clojure Bot"
-               :nick      "clojbot"
+               :nick      "clojbot__"
                :altnicks  ["clojbot_" "clojbot__"]
                })
 (def kreynet {
@@ -25,12 +25,21 @@
               :port      6667
               :channels  ["#clojbot" "#clojbot2"]
               :name      "Clojure Bot"
-              :nick      "clojbot"
+              :nick      "clojbot__"
+              :altnicks  ["clojbot_" "clojbot__"]
+              })
+(def quakenet {
+              :humanname "quakenet"
+              :ip        "euroserv.fr.quakenet.org"
+              :port      6667
+              :channels  ["#begijnhof"]
+              :name      "yourmother"
+              :nick      "yourmother"
               :altnicks  ["clojbot_" "clojbot__"]
               })
 
 (defn -main
   "I don't do a whole lot."
   [& args]
-  (let [bot (core/create-bot [freenode kreynet])]
+  (let [bot (core/create-bot [freenode kreynet quakenet])]
     (println "done")))
