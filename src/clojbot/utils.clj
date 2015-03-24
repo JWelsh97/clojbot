@@ -51,4 +51,11 @@
                (prn "new-state" new-state))))
 
 
+(defn shift-left
+  [xs]
+  (let [len (count xs)
+        shift (take len (drop 1 (cycle xs)))]
+    shift))
+
+
 

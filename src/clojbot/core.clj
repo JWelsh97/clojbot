@@ -3,7 +3,8 @@
             [clojbot.utils         :as u]
             [clojbot.commands      :as cmd]
             [clojbot.botcore       :as core]
-            [clojure.core.async    :as as])
+            [clojure.core.async    :as as]
+            [clojure.edn           :as edn])
   (:gen-class))
 
 ;; TODO On a message that comes in of a failed nick, rotate the list of
@@ -38,8 +39,9 @@
               :altnicks  ["clojbot_" "clojbot__"]
               })
 
+
 (defn -main
-  "I don't do a whole lot."
   [& args]
-  (let [bot (core/create-bot [freenode kreynet quakenet])]
-    (println "done")))
+  (let [servers (edn/read-string (slurp "conf/servers.edn"))]
+    (let [bot (core/connect-bot (core/create-bot servers))]
+      (println "done"))))
