@@ -14,4 +14,5 @@
                  [org.clojure/core.async "0.1.346.0-17112a-alpha"]
                  [org.clojure/java.jdbc "0.3.6"]
                  [postgresql "9.1-901.jdbc4"]]
+  :plugins [[codox "0.8.11"]]                 
   :aot [:all])

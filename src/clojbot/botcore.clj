@@ -12,7 +12,6 @@
 (declare write-message)
 (declare register-user)
 (declare change-nick)
-(declare reply-ping)
 (declare handle-message)
 (declare heartbeat)
 (declare join-channel)
@@ -165,7 +164,7 @@
     (as/>!! (:hb-chan @srv-instance) (:original msg))))
 
 
-(defn handle-nick-taken
+(defn- handle-nick-taken
   "Actions to take when the server lets us know that our nickname has already
   been taken."
   [srv-instance]

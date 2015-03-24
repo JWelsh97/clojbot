@@ -11,7 +11,7 @@
  {  :humanname "kreynet"
   :ip        "irssi.be.krey.net"
   :port      6667
-  :channels  [#infogroep"]
+  :channels  ["#infogroep"]
   :name      "Clojure Bot"
   :nick      "Clojbot"
   :altnicks  ["Clojbot_" "Clojbot__" "Clojbot___"]
