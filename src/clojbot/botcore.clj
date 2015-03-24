@@ -385,28 +385,16 @@
   (let [chan (:out-chan  @srv-instance)]
     (as/>!! chan message)))
 
-(defn create-bot
-  "Creates an instance of this bot. Adds the necessary fields and
-  returns a big ref that contains all the runtime data."
-  [serverinfo]
-  (setup-server serverinfo))
-
-
 (defn create-bots
   [serverinfos]
-  (doall (map create-bot serverinfos)))
-
-
-(defn connect-bot
-  "Takes a bot and connects to the irc network, registers the user,
-  monitors the server and joins all wanted channels."
-  [serverinstance]
-  ((comp monitor-server
-         register-server
-         connect-server)
-   serverinstance))
+  (doall
+   (map setup-server serverinfos)))
 
 
 (defn connect-bots
-  [serverinstances]
-  (doall (map connect-bot serverinstances)))
+  "Takes a bot and connects to the irc network, registers the user,
+  monitors the server and joins all wanted channels."
+  [serverinstance]
+  (doall
+   (map #((comp monitor-server register-server connect-server) %)
+        serverinstance)))
