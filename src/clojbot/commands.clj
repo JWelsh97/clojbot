@@ -10,14 +10,6 @@
   (dosync (core/write-message bot "PING 1234")))
 
 
-(defn register
-  "Sets up the nickname and user information on the server."
-  [bot user]
-  (dosync
-   (core/write-message bot (str "NICK " (:nick user)))
-   (core/write-message bot (str "USER " (:nick user) " 0 * :" (:name user)))))
-
-
 (defn join
   "Joins a given channel list."
   [bot channels]
