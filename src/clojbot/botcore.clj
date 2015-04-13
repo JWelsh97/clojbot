@@ -2,11 +2,13 @@
   (:import  [java.net              Socket                                      ]
             [java.io               PrintWriter InputStreamReader BufferedReader]
             [java.util.concurrent  LinkedBlockingQueue TimeUnit                ]
-            [java.lang             InterruptedException                        ])
+            [java.lang             InterruptedException                        ]
+            )
   (:require [clojbot.utils         :as u  ]
             [clojure.core.async    :as as ]
             [clojure.tools.logging :as log]
-            [clojure.string        :as str]))
+            [clojure.string        :as str]
+            [clojure.edn           :as edn]))
 
 
 (declare write-message)
@@ -23,11 +25,17 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
+(defn- exiting?
+  "Returns true if the bot is shutting down. "
+  [srv-instance]
+  (:exiting @srv-instance))
+
+
 (defn- connected?
   "Returns true if the current server insantance is connected with
   sockets to the server."
   [srv-instance]
-  (:connected @srv-instance))
+  (and (not (exiting? srv-instance)) (:connected @srv-instance)))
 
 
 (defn- disconnected?
@@ -44,12 +52,6 @@
   (:registered @srv-instance))
 
 
-(defn- exiting?
-  "Returns true if the bot is shutting down. "
-  [srv-instance]
-  (:exiting @srv-instance))
-
-
 (defn- human-name
   "Gets the human readable name from the server instance."
   [srv-instance]
@@ -60,12 +62,27 @@
   "Takes a server instance, a function and a predicate. Will loop
   infinitly in a seperate thread until the predicate returns
   false. Returns the thread reference."
-  [srv-instance body pred]
+  [srv-instance body pred label]
   (let [thread (Thread.
-                #(while (pred srv-instance)
-                   (body)))]
+                (fn []
+                  (while (pred srv-instance)
+                    (body))
+                  (log/info label " loop exiting!")))]
     (.start thread)
     thread))
+
+
+(defn- loop-in-future-while-pred
+  "Takes a server instance, a function and a predicate. Will loop
+  infinitly in a future until the predicate returns false. Returns the
+  future reference."
+  [srv-instance body pred label]
+  (let [future (future
+                 ((fn []
+                    (while (pred srv-instance)
+                      (body))
+                    (log/error "Future " label  " exiting!"))))]
+    future))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -176,13 +193,32 @@
     (change-nick srv-instance next)))
 
 
+(defn- handle-dispatch
+  "Dispatches a message to all modules that have been registered to
+  receive this type of message."
+  [srv-instance msg]
+  (let [msgtype (keyword (:command msg))]
+    ;; Get all the channels that want to receive this message.  Send the message
+    ;; to all the channels that have registered to receive messages of this
+    ;; particular command type.
+    (doall
+     (map #(as/>!! % msg)
+          (msgtype (:module-channels @srv-instance))))
+    (doall
+     (map #(as/>!! % msg)
+          (:ANY (:module-channels @srv-instance))))))
+
+
 ;;; Message dispatcher. Used by read-in loop.
 (defn- handle-message
   "Function that dispatches over the type of message we receive."
   [msg srv-instance]
   ;; Ignored messages.
   (when-not (contains? #{"372"} (:command msg))
-    (log/info " IN -" (format "%15s" (human-name srv-instance)) " - " (:original msg)))
+    (log/info " IN -"
+              (format "%15s" (human-name srv-instance))
+              " - "
+              (:original msg)))
   (cond
    (= "NICK" (:command msg))
    (handle-change-nick srv-instance (:message msg))
@@ -195,7 +231,9 @@
    (= "PONG"  (:command msg))
    (handle-pong srv-instance msg)
    (= "433" (:command msg))
-   (handle-nick-taken srv-instance)))
+   (handle-nick-taken srv-instance)
+   :else
+   (future (handle-dispatch srv-instance msg))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;
@@ -212,7 +250,9 @@
           port     (get-in @server [:info :port])
           socket   (doto (Socket. ip port)
                      (.setSoTimeout 5000))
-          in       (BufferedReader. (InputStreamReader. (.getInputStream socket)))
+          in       (BufferedReader.
+                    (InputStreamReader.
+                     (.getInputStream socket)))
           out      (PrintWriter. (.getOutputStream socket))
           clean-fn #(do
                       (.close socket)
@@ -230,15 +270,18 @@
   server. Server setup map contains the keys
   {:ip :port :channels :name :nick :altnicks}"
   [serverinfo]
-  (ref {:info           serverinfo
-        :connected      false
-        :registered     false
-        :regd-callbacks []
-        :exiting        false
-        :socket         nil
-        :in-chan        (as/chan)
-        :out-chan       (as/chan)
-        :hb-chan        (as/chan)}))
+  (ref {:name            (:humanname serverinfo)
+        :info            serverinfo
+        :connected       false
+        :registered      false
+        :regd-callbacks  []
+        :exiting         false ;; will be set to true if the bot is exiting.
+        :socket          nil   ;; Sockets to communicate with the server.
+        :in-chan         (as/chan) ;; Channel that has incoming messages from the server.
+        :out-chan        (as/chan) ;; Channel that has outgoing messages to the server.
+        :hb-chan         (as/chan) ;; Heartbeat channel.
+        :module-channels {}}))
+
 
 
 (defn- connect-server
@@ -257,12 +300,14 @@
                      srv-instance
                       (fn []
                        (process-outgoing srv-instance))
-                     connected?)
+                      connected?
+                      :out-loop)
           in-loop  (loop-in-thread-while-pred
                     srv-instance
                     (fn []
                       (process-incoming srv-instance))
-                    connected?)]
+                    connected?
+                    :in-loop)]
       (dosync
        (alter srv-instance
               #(assoc %
@@ -296,7 +341,8 @@
                    srv-instance
                    (fn []
                      (heartbeat srv-instance))
-                   #(not (exiting? %)))]
+                   #(not (exiting? %))
+                   :heartbeat)]
     (dosync
      (alter srv-instance
             #(assoc % :monitor heartbeat)))
@@ -365,10 +411,36 @@
       (Thread/sleep 60000)
       ;; If no pong is received, try a reconnect and keep trying until it
       ;; succeeds.
-      (do (reconnect-server srv-instance)
-          (while (disconnected? srv-instance)
-            (Thread/sleep 1000)
-            (reconnect-server srv-instance))))))
+      (when (not (exiting? srv-instance))
+        (do (reconnect-server srv-instance)
+            (while (disconnected? srv-instance)
+              (Thread/sleep 1000)
+              (reconnect-server srv-instance)))))))
+
+
+(defn- attach-module
+  "Attaches a module to a running bot by adding the channel to the bot's state.
+  Runs the module function in a loop and keeps feeding it messages."
+  [srv-instance module]
+  (let [type     (:type module)
+        modfn    (:handler module)
+        mod-chan (as/chan)] ;; Create new channel for this module.
+    ;; Add the module's channel to the proper submap.
+    (dosync
+     (alter srv-instance
+            (fn [srv]
+              (update-in srv
+                         [:module-channels type]
+                         conj mod-chan))))
+    ;; Start of a future that will run this module.
+    (loop-in-future-while-pred
+     srv-instance
+     (fn []
+       (when-let [msg (u/read-with-timeout mod-chan 5000)]
+         (modfn srv-instance msg)))
+     #(not (exiting? %))
+     (:name module))
+    (log/info "Attached module " (:name module) " to " (:name @srv-instance))))
 
 
 ;;;;;;;;;
@@ -384,7 +456,23 @@
   (let [chan (:out-chan  @srv-instance)]
     (as/>!! chan message)))
 
+
+(defn connect-module
+  "Takes a module and a list of server instances. It will attach the
+  module to the server that matches, or if :all is given to all
+  servers."
+  [server-instances module server-filter]
+  (doall
+   (map #(attach-module % module)
+        (if (= :all server-filter)
+          server-instances
+          (filter #(= (:name @%) server-filter)
+                  server-instances)))))
+
+
 (defn create-bots
+  "Takes a list of server infos and applies setup-server to each of
+  them, resulting in a list of instances."
   [serverinfos]
   (doall
    (map setup-server serverinfos)))
@@ -393,7 +481,16 @@
 (defn connect-bots
   "Takes a bot and connects to the irc network, registers the user,
   monitors the server and joins all wanted channels."
-  [serverinstance]
+  [serverinstances]
   (doall
    (map #((comp monitor-server register-server connect-server) %)
-        serverinstance)))
+        serverinstances)))
+
+
+(defn init-bot
+  "Reads the configuration file from disk and creates an instance for
+  each of the servers in the configuration. This results in a list of
+  servers (which are refs)."
+  []
+  (let [server-config (edn/read-string (slurp "conf/servers.edn"))]
+    (connect-bots (create-bots server-config))))

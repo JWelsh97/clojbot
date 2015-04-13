@@ -13,6 +13,11 @@
                  [org.clojure/tools.logging "0.3.1"]
                  [org.clojure/core.async "0.1.346.0-17112a-alpha"]
                  [org.clojure/java.jdbc "0.3.6"]
-                 [postgresql "9.1-901.jdbc4"]]
-  :plugins [[codox "0.8.11"]]                 
+                 [postgresql "9.1-901.jdbc4"]
+                 ;; Youtube Search
+                 [com.google.api-client/google-api-client "1.19.1"]
+                 [com.google.apis/google-api-services-youtube "v3-rev104-1.18.0-rc"]
+                 [com.google.http-client/google-http-client-jackson "1.20.0"]]
+  :plugins [[codox "0.8.11"]]
+  :java-source-paths ["java"]
   :aot [:all])

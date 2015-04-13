@@ -1,0 +1,7 @@
+{
+ :dbhost "localhost"
+ :dbport 5432
+ :dbname "clojbot"
+ :dbuser "christophe"
+ :dbpass "christophe"
+}
