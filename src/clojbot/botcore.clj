@@ -27,45 +27,97 @@
 
 (defn- exiting?
   "Returns true if the bot is shutting down. "
-  [srv-instance]
-  (:exiting @srv-instance))
+  [srv]
+  (:exiting @srv))
 
 
 (defn- connected?
   "Returns true if the current server insantance is connected with
   sockets to the server."
-  [srv-instance]
-  (and (not (exiting? srv-instance)) (:connected @srv-instance)))
+  [srv]
+  (and (not (exiting? srv)) (:connected @srv)))
 
 
 (defn- disconnected?
   "Returns false if the current server insantance is connected with
   sockets to the server."
-  [srv-instance]
-  (not (connected? srv-instance)))
+  [srv]
+  (not (connected? srv)))
 
 
 (defn- registered?
   "Returns true if the current server insantance is registered on the
   irc network."
-  [srv-instance]
-  (:registered @srv-instance))
+  [srv]
+  (:registered @srv))
 
 
 (defn- human-name
   "Gets the human readable name from the server instance."
-  [srv-instance]
-  (:humanname (:info @srv-instance)))
+  [srv]
+  (:humanname (:info @srv)))
+
+
+(defn- hookmap
+  "Gets the mapping of message types to functions."
+  [srv]
+  (:hook @srv))
+
+
+(defn- commandmap
+  "Gets the mapping from commands to handler."
+  [srv]
+  (:command @srv))
+
+
+(defn- parse-command
+  "Takes a raw input message and checks if it can pick out a command.
+  A command is always formatted as '~<trigger> <args>' where args can
+  be empty."
+  [msg]
+  (try
+    (when-let [regex (re-matches #"~(\w+)\s?(.+)" (:message msg))]
+      {:trigger (keyword (nth regex 1))
+       :args    (nth regex 2)})
+    (catch NullPointerException e nil)))
+
+
+(defn- apply-handlers-of-kind-to
+  "Takes a server, a keyword and arguments. For each handler that is
+  associated with the keyword in the command map, the handler will be
+  applied to the given arguments. In case of an exception an error message is printed to stdout."
+  [srv kind & args]
+  (let [handlermap (commandmap srv)
+        handlers   (kind handlermap)]
+    (doseq [handler handlers]
+      (try
+        (apply handler args)
+        (catch Exception e
+          (log/error "Command handler " handler " threw an exception: " (.getMessage e)))))))
+
+(defn- apply-hooks-of-kind-to
+  "Given a kind and arguments, this function will take out all the
+  handlers in the hooks map that are bound to the keyword. It will
+  then apply each handler to the given arguments. In case of an
+  exception the handler an error message is printed to stdout."
+  [srv kind & args]
+  (let [hooks    (hookmap srv)
+        handlers (kind hooks)]
+    (doseq [handler handlers]
+      (try
+        (apply handler args)
+        (catch Exception e
+          (log/error "Hook " handler " threw an exception: " (.getMessage e)))))))
 
 
 (defn- loop-in-thread-while-pred
   "Takes a server instance, a function and a predicate. Will loop
   infinitly in a seperate thread until the predicate returns
   false. Returns the thread reference."
-  [srv-instance body pred label]
+  [srv body pred label]
   (let [thread (Thread.
                 (fn []
-                  (while (pred srv-instance)
+                  (while (pred srv)
                     (body))
                   (log/info label " loop exiting!")))]
     (.start thread)
@@ -76,10 +128,10 @@
   "Takes a server instance, a function and a predicate. Will loop
   infinitly in a future until the predicate returns false. Returns the
   future reference."
-  [srv-instance body pred label]
+  [srv body pred label]
   (let [future (future
                  ((fn []
-                    (while (pred srv-instance)
+                    (while (pred srv)
                       (body))
                     (log/error "Future " label  " exiting!"))))]
     future))
@@ -117,18 +169,18 @@
 
 (defn- process-incoming
   "Reads a message from the incoming socket and dispatches it."
-  [srv-instance]
-  (let [msg (read-in (:socket @srv-instance))]
+  [srv]
+  (let [msg (read-in (:socket @srv))]
     (when msg
-      (handle-message msg srv-instance))))
+      (handle-message msg srv))))
 
 
 (defn- process-outgoing
   "Processes a message from the outbound channel and writes it to the socket."
-  [srv-instance]
-  (when-let [msg (u/read-with-timeout (:out-chan @srv-instance) 5000)]
-    (log/info "OUT -" (format "%15s" (human-name srv-instance)) " - " msg)
-    (write-out (:socket @srv-instance) msg)))
+  [srv]
+  (when-let [msg (u/read-with-timeout (:out-chan @srv) 5000)]
+    (log/info "OUT -" (format "%15s" (human-name srv)) " - " msg)
+    (write-out (:socket @srv) msg)))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;
@@ -138,37 +190,37 @@
 
 (defn- handle-change-nick
   "Actions to take when a nickchange has been announced for the current instance."
-  [srv-instance nickname]
+  [srv nickname]
   (log/debug "### ::" "Changed nick to " nickname)
   (dosync
-   (alter srv-instance #(update-in % [:info :nick] (fn [_] nickname)))
+   (alter srv #(update-in % [:info :nick] (fn [_] nickname)))
    (log/info "Nickname changed to " nickname)))
 
 
 (defn- handle-ping
   "Actions to take when the server sends us a ping message."
-  [srv-instance ping]
-  (write-message srv-instance (str "PONG " (re-find #":.*" ping))))
+  [srv ping]
+  (write-message srv (str "PONG " (re-find #":.*" ping))))
 
 
 (defn- handle-001
   "Actions to take when the server sends the 001 command. 001 means
   that we have been registered on the server."
-  [srv-instance]
-  (log/info "### ::" "Registered for " (-> @srv-instance :info :humanname))
+  [srv]
+  (log/info "### ::" "Registered for " (-> @srv :info :humanname))
   (dosync
-   (alter srv-instance #(assoc % :registered true)))
+   (alter srv #(assoc % :registered true)))
   ;; Join the channels
-  (join-channels srv-instance))
+  (join-channels srv))
 
 
 (defn- handle-error
   "Actions to take when the server sends an ERROR command. Probably
   means disconnecting."
-  [srv-instance]
+  [srv]
   (log/info "### ::" "Server is closing link. Exiting bot.")
   (dosync
-   (alter srv-instance
+   (alter srv
           #(assoc %
              :registered false
              :connected  false))))
@@ -176,64 +228,58 @@
 (defn- handle-pong
   "Actions to take when the server sends us a pong message. Pong is a
   reply to our ping."
-  [srv-instance msg]
+  [srv msg]
   (let [pong-id (re-find #":.*" (:original msg))]
-    (as/>!! (:hb-chan @srv-instance) (:original msg))))
+    (as/>!! (:hb-chan @srv) (:original msg))))
 
 
 (defn- handle-nick-taken
   "Actions to take when the server lets us know that our nickname has already
   been taken."
-  [srv-instance]
+  [srv]
   ;; Swap the nicklist in the bot by shifting it one position.
   (dosync
    (alter
-    srv-instance #(update-in % [:info :altnicks] u/shift-left)))
-  (let [next (first (-> @srv-instance :info :altnicks))]
-    (change-nick srv-instance next)))
+    srv #(update-in % [:info :altnicks] u/shift-left)))
+  (let [next (first (-> @srv :info :altnicks))]
+    (change-nick srv next)))
 
 
 (defn- handle-dispatch
-  "Dispatches a message to all modules that have been registered to
-  receive this type of message."
-  [srv-instance msg]
-  (let [msgtype (keyword (:command msg))]
-    ;; Get all the channels that want to receive this message.  Send the message
-    ;; to all the channels that have registered to receive messages of this
-    ;; particular command type.
-    (doall
-     (map #(as/>!! % msg)
-          (msgtype (:module-channels @srv-instance))))
-    (doall
-     (map #(as/>!! % msg)
-          (:ANY (:module-channels @srv-instance))))))
+  "Parses a message and checks if it is a command (e.g., ~youtube
+  movietitle). If it is a command the proper handlers are executed.
+  Finally, all hooks are executed as well according to the type of
+  this message. (e.g., privmsg)."
+  [srv msg]
+  (let [ ;; Determine the hook type. (e.g., PRIVMSG, PONG,..)
+        irc-command (keyword (:command msg))
+        command     (parse-command msg)]
+    ;; If it is a syntactical valid command, find the handler if there is one.
+    (when-let [{t :trigger a :args} command]
+      (apply-handlers-of-kind-to srv t srv a msg))
+    ;; Handle all the registered hooks for this command.
+    (apply-hooks-of-kind-to srv irc-command srv msg)))
 
 
-;;; Message dispatcher. Used by read-in loop.
 (defn- handle-message
   "Function that dispatches over the type of message we receive."
-  [msg srv-instance]
+  [msg srv]
   ;; Ignored messages.
-  (when-not (contains? #{"372"} (:command msg))
-    (log/info " IN -"
-              (format "%15s" (human-name srv-instance))
-              " - "
-              (:original msg)))
   (cond
    (= "NICK" (:command msg))
-   (handle-change-nick srv-instance (:message msg))
+   (handle-change-nick srv (:message msg))
    (re-find #"^PING" (:original msg))
-   (handle-ping srv-instance (:original msg))
+   (handle-ping srv (:original msg))
    (= "001" (:command msg))
-   (handle-001 srv-instance)
+   (handle-001 srv)
    (re-find #"^ERROR :Closing Link:" (:original msg))
-   (handle-error srv-instance)
+   (handle-error srv)
    (= "PONG"  (:command msg))
-   (handle-pong srv-instance msg)
+   (handle-pong srv msg)
    (= "433" (:command msg))
-   (handle-nick-taken srv-instance)
+   (handle-nick-taken srv)
    :else
-   (future (handle-dispatch srv-instance msg))))
+   (future (handle-dispatch srv msg))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;
@@ -266,109 +312,109 @@
 
 
 (defn- setup-server
-  "Expects a server setup map and creates a ref srv-instance for this
+  "Expects a server setup map and creates a ref srv for this
   server. Server setup map contains the keys
   {:ip :port :channels :name :nick :altnicks}"
   [serverinfo]
-  (ref {:name            (:humanname serverinfo)
-        :info            serverinfo
-        :connected       false
-        :registered      false
-        :regd-callbacks  []
-        :exiting         false ;; will be set to true if the bot is exiting.
-        :socket          nil   ;; Sockets to communicate with the server.
-        :in-chan         (as/chan) ;; Channel that has incoming messages from the server.
-        :out-chan        (as/chan) ;; Channel that has outgoing messages to the server.
-        :hb-chan         (as/chan) ;; Heartbeat channel.
-        :module-channels {}}))
+  (ref {:name        (:humanname serverinfo)
+        :info        serverinfo
+        :connected   false
+        :registered  false
+        :exiting     false ;; will be set to true if the bot is exiting.
+        :socket      nil   ;; Sockets to communicate with the server.
+        :in-chan     (as/chan) ;; Channel that has incoming messages from the server.
+        :out-chan    (as/chan) ;; Channel that has outgoing messages to the server.
+        :hb-chan     (as/chan) ;; Heartbeat channel.
+        :command    {}        ;; Mapping of functions to triggers. Multiple
+        :hook       {}})) ;; Mapping of irc commands (e.g., PRIVMSG) to a function.
 
 
 
 (defn- connect-server
   "Takes a server, attaches a socket to it and starts the read-in and
   -out loops."
-  [srv-instance]
-  (when-let [socket (create-socket srv-instance)]
-    ;; Store the socket in the server srv-instance.
+  [srv]
+  (when-let [socket (create-socket srv)]
+    ;; Store the socket in the server srv.
     (dosync
-     (alter srv-instance
+     (alter srv
             #(assoc %
                :socket socket
                :connected true)))
     ;; After socket is in place and connected is set to true, start loops.
     (let [out-loop  (loop-in-thread-while-pred
-                     srv-instance
-                      (fn []
-                       (process-outgoing srv-instance))
-                      connected?
-                      :out-loop)
+                     srv
+                     (fn []
+                       (process-outgoing srv))
+                     connected?
+                     :out-loop)
           in-loop  (loop-in-thread-while-pred
-                    srv-instance
+                    srv
                     (fn []
-                      (process-incoming srv-instance))
+                      (process-incoming srv))
                     connected?
                     :in-loop)]
       (dosync
-       (alter srv-instance
+       (alter srv
               #(assoc %
                  :out-loop out-loop
                  :in-loop  in-loop)))
-      srv-instance)))
+      srv)))
 
 
 (defn- register-server
   "Registers the bot on the network."
-  [srv-instance]
-  (register-user srv-instance)
-  srv-instance)
+  [srv]
+  (register-user srv)
+  srv)
 
 
 (defn- join-channels
-  "Joins the channels in the srv-instance."
-  [srv-instance]
+  "Joins the channels in the srv."
+  [srv]
   (doall
-   (map #(join-channel srv-instance %)
-        (-> @srv-instance :info :channels)))
-  srv-instance)
+   (map #(join-channel srv %)
+        (-> @srv :info :channels)))
+  srv)
 
 
 (defn- monitor-server
   "Attaches a loop the the connection. Sends heartbeats on periodic
   intervals. Reconnects the server if a reply from the server does not
   arrive after certain time."
-  [srv-instance]
+  [srv]
   (let [heartbeat (loop-in-thread-while-pred
-                   srv-instance
+                   srv
                    (fn []
-                     (heartbeat srv-instance))
+                     (heartbeat srv))
                    #(not (exiting? %))
                    :heartbeat)]
     (dosync
-     (alter srv-instance
+     (alter srv
             #(assoc % :monitor heartbeat)))
-    srv-instance))
+    srv))
 
 
 (defn- reconnect-server
   "Creates a new socket for this server instance, re-registers on the
   network and re-joins channels."
-  [srv-instance]
-  (log/error "### ::" "Reconnecting " (:humanname (:info @srv-instance)))
+  [srv]
+  (log/error "### ::" "Reconnecting " (:humanname (:info @srv)))
   ;; First clean up current connections, if any.
-  (when (:socket @srv-instance)
-    (-> @srv-instance :socket :cleanup))
+  (when (:socket @srv)
+    (-> @srv :socket :cleanup))
   ;; Reset status.
   (dosync
-   (alter srv-instance
+   (alter srv
           #(assoc %
              :socket     nil
              :connected  false
              :registered false)))
-  (connect-server srv-instance)
+  (connect-server srv)
   ;; Only register when connected.
-  (when (connected? srv-instance)
-    (register-server srv-instance)
-    (join-channels srv-instance)))
+  (when (connected? srv)
+    (register-server srv)
+    (join-channels srv)))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;
@@ -378,69 +424,69 @@
 
 (defn- change-nick
   "Requests a nick change from the server."
-  [srv-instance nick]
-  (write-message srv-instance (str "NICK " nick)))
+  [srv nick]
+  (write-message srv (str "NICK " nick)))
 
 
 (defn- register-user
   "Register user on the network."
-  [srv-instance]
-  (let [nick (-> @srv-instance :info :nick)
-        name (-> @srv-instance :info :name)]
-    (write-message srv-instance (str "NICK " nick))
-    (write-message srv-instance (str "USER " nick " 0 * :" name))))
+  [srv]
+  (let [nick (-> @srv :info :nick)
+        name (-> @srv :info :name)]
+    (write-message srv (str "NICK " nick))
+    (write-message srv (str "USER " nick " 0 * :" name))))
 
 (defn- join-channel
   "Joins a given channel list."
-  [srv-instance channel]
-  (write-message srv-instance (str "JOIN " channel)))
+  [srv channel]
+  (write-message srv (str "JOIN " channel)))
 
 
 (defn- heartbeat
   "Send ping messages to the server in periodic intervals and wait for
   their reply. If no reply has been sent assume connection is dead and
   attempt reconnect until succes."
-  [srv-instance]
+  [srv]
   ;; Send the ping message only if we are registered.
-  (when (registered? srv-instance)
-    (write-message srv-instance (str "PING clojbot"))
+  (when (registered? srv)
+    (write-message srv (str "PING clojbot"))
     ;; Await for the reply on the heartbeat channel.
     ;; Only reconnect if we are not connected or registered.
-    (if-let [reply (u/read-with-timeout (:hb-chan @srv-instance) 60000)]
+    (if-let [reply (u/read-with-timeout (:hb-chan @srv) 60000)]
       ;; If a pong is received, wait for a proper amount of time.
       (Thread/sleep 60000)
       ;; If no pong is received, try a reconnect and keep trying until it
       ;; succeeds.
-      (when (not (exiting? srv-instance))
-        (do (reconnect-server srv-instance)
-            (while (disconnected? srv-instance)
+      (when (not (exiting? srv))
+        (do (reconnect-server srv)
+            (while (disconnected? srv)
               (Thread/sleep 1000)
-              (reconnect-server srv-instance)))))))
+              (reconnect-server srv)))))))
 
 
-(defn- attach-module
-  "Attaches a module to a running bot by adding the channel to the bot's state.
-  Runs the module function in a loop and keeps feeding it messages."
-  [srv-instance module]
-  (let [type     (:type module)
-        modfn    (:handler module)
-        mod-chan (as/chan)] ;; Create new channel for this module.
-    ;; Add the module's channel to the proper submap.
+(defn add-handler
+  " Adds a command or hook to the bot. This function should only be
+  used by the module dispatcher!"
+  [srv module]
+  (let [handler  (:handler module)
+        kind     (:kind module) ;; :command or a :hook
+        ;; Each module is either a hook or a command.
+        ;; A command has  a :command defined (e.g., "youtube")
+        ;; and a hook has a hook defined (e.g., :PRIVMSG).
+        ;; So the two below are mutually exclusive!
+        command  (:command module)
+        hook     (:hook module)
+        submap   (keyword (if command command hook))]
+    ;; The kind: :command or :hook
+    ;; Create new channel for this module.
+    ;; Insert the handler in the proper sublist in the bot.
     (dosync
-     (alter srv-instance
+     (alter srv
             (fn [srv]
               (update-in srv
-                         [:module-channels type]
-                         conj mod-chan))))
-    ;; Start of a future that will run this module.
-    (loop-in-future-while-pred
-     srv-instance
-     (fn []
-       (when-let [msg (u/read-with-timeout mod-chan 5000)]
-         (modfn srv-instance msg)))
-     #(not (exiting? %))
-     (:name module))
-    (log/info "Attached module " (:name module) " to " (:name @srv-instance))))
+                         [kind submap]
+                         conj handler))))))
+
 
 
 ;;;;;;;;;
@@ -452,22 +498,15 @@
   "Puts a message in the channel of the bot. This will be then picked up by the
   loop in socket-write-loop. Expects *RAW* messages! Use abstractions provided
   in commands.clj."
-  [srv-instance message]
-  (let [chan (:out-chan  @srv-instance)]
+  [srv message]
+  (let [chan (:out-chan  @srv)]
     (as/>!! chan message)))
 
 
-(defn connect-module
-  "Takes a module and a list of server instances. It will attach the
-  module to the server that matches, or if :all is given to all
-  servers."
-  [server-instances module server-filter]
+(defn add-module
+  [server-instances command]
   (doall
-   (map #(attach-module % module)
-        (if (= :all server-filter)
-          server-instances
-          (filter #(= (:name @%) server-filter)
-                  server-instances)))))
+   (map #(add-handler % command) server-instances)))
 
 
 (defn create-bots

@@ -42,6 +42,7 @@
   https://developers.google.com/youtube/v3/code_samples/java#search_by_keyword.
   Requires an API key that is set in `conf/youtube.edn`."
   [searchterm]
+  (log/debug "Searching youtube for <" searchterm ">")
   (let [;; Try to slurp the api key. If no key is found (file missing) the
         ;; default is nil.  This will cause unauthenticated searches and might
         ;; fail.
@@ -50,6 +51,7 @@
                    (catch java.io.FileNotFoundException e
                      (log/error "No conf/youtube.edn file found! Using unauthenticated mode!")
                      nil))
+        _        (log/debug "Got api key: " apikey)
         ;; Create the object that is needed to make YouTube Data Api requests.
         ;; The last argument (reify) is required. But we do not need to
         ;; initialize anything when the http request is initialize, we make it a
@@ -61,6 +63,7 @@
                              (reify HttpRequestInitializer
                                (initialize [this request])))
                         "clojbot-video-search"))
+        _ (log/debug "Got youtube instance")
         ;; Define the API request.
         search  (doto  (.list (.search yt) "id,snippet")
                   (.setKey apikey)      ; Set API key.
@@ -70,10 +73,14 @@
                   ;;https://developers.google.com/youtube/v3/getting-started#fields)
                   (.setFields "items(id/kind,id/videoId,snippet/title,snippet/thumbnails/default/url)")
                   (.setMaxResults 1)) ;; Limit the results.
+        _ (log/debug "Configured search")
         result (try  (.execute search)
                      (catch GoogleJsonResponseException e
                        (log/error "Service error getting results from youtube: " (parse-error-message e))
-                       {:error (parse-error-message e)}))]
+                       {:error (parse-error-message e)}))
+        _ (log/debug "Executed search!")
+        ]
+    (log/debug "Search done!")
     ;; Map a bean to generate a map, and then reduce the results using mapify
     ;; over the result to obtain a proper map.
     (if (:error result)
