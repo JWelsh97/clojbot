@@ -1,0 +1,11 @@
+[
+ {
+  :humanname :freenode
+  :ip        "verne.freenode.net"
+  :port      6667
+  :channels  ["#clojbot"]
+  :name      "Clojure Bot"
+  :nick      "UwZus"
+  :altnicks  ["UwZus_" "UwZus__" "UwZus___"]
+  }
+ ]
