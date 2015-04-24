@@ -17,7 +17,9 @@
                  ;; Youtube Search
                  [com.google.api-client/google-api-client "1.19.1"]
                  [com.google.apis/google-api-services-youtube "v3-rev104-1.18.0-rc"]
-                 [com.google.http-client/google-http-client-jackson "1.20.0"]]
+                 [com.google.http-client/google-http-client-jackson "1.20.0"]
+                 [clj-http "1.1.1"           ]
+                 [com.cemerick/url "0.1.1"]]
   :plugins [[codox "0.8.11"]]
   :java-source-paths ["java"]
   :aot [:all])
