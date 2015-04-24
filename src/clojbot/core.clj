@@ -35,7 +35,7 @@
     (let [resp    (client/get search {:headers header})
           matches (re-find #"<h3.*?><a href=\"(.+?)\" .*?>(.*?)<\/a>" (:body resp))]
       (when matches
-        (let [furl (nth matches 1)
+        (let [furl  (nth matches 1)
               fname (nth matches 2)]
           {:url furl :title fname})))))
 
@@ -72,7 +72,8 @@
                               (log/debug "Searching Google for " args)
                               (let [results (search args)]
                                 (if results
-                                  (cmd/send-message srv (:channel msg) (str (:title results) " :: " (:url results))))))})
+                                  (cmd/send-message srv (:channel msg) (str (:title results) " :: " (:url results)))
+                                  (cmd/send-message srv (:channel msg) "No results found!"))))})
 
 
 (def echo {:kind    :command
@@ -85,6 +86,7 @@
                :hook :PRIVMSG
                :handler (fn [srv message]
                           (log/debug "Got a PRIVMSG:" (:message message)))})
+:q
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
