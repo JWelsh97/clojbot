@@ -18,7 +18,27 @@
 (declare heartbeat)
 (declare join-channel)
 (declare join-channels)
+(declare add-module)
 
+;;;;;;;;;;;;;;;;;;;;;;;;
+;; Macros for Modules ;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+(defmacro defcommand
+  [trigger handler]
+  `{:kind :command :trigger ~trigger :handler ~handler})
+
+(defmacro defhook
+  [type handler]
+  `{:kind :hook :hook ~type :handler ~handler})
+
+
+(defmacro defmodule
+  [modulename & maps]
+  `(defn load-module [srvrs#]
+     (doseq [cmd# ~maps]
+       (~add-module srvrs# cmd#))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Helper Abstractions ;;
