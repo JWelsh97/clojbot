@@ -13,7 +13,7 @@
 
 
 ;;;;;;;;;;;;;
-;; Helpers ;;
+;; HELPERS ;;
 ;;;;;;;;;;;;;
 
 
@@ -93,9 +93,10 @@
       result
       {:result  (map (comp parse-result bean) (iterator-seq (.iterator (.getItems result))))})))
 
-;;;;;;;;;;;;
-;; Module ;;
-;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;
+;; MODULE DEFINITION ;;
+;;;;;;;;;;;;;;;;;;;;;;;
 
 
 (core/defmodule

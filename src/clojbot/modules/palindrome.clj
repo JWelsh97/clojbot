@@ -4,10 +4,22 @@
             [clojure.string   :as str ]))
 
 
+;;;;;;;;;;;;;
+;; HELPERS ;;
+;;;;;;;;;;;;;
+
+
 (defn is-palindrome?
+  "Checks if a word is longer than 5 chars and a palindrome."
   [word]
   (and (< 5  (count word))
        (= word (apply str (reverse word)))))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;
+;; MODULE DEFINITION ;;
+;;;;;;;;;;;;;;;;;;;;;;;
+
 
 (core/defmodule
   :palindrome

@@ -1,14 +1,5 @@
 (ns clojbot.core
-  (:require [clojure.tools.logging :as log   ]
-            [clojbot.utils         :as u     ]
-            [clojbot.commands      :as cmd   ]
-            [clojbot.botcore       :as core  ]
-            [clojure.core.async    :as as    ]
-            [clojure.edn           :as edn   ]
-            [clojbot.db            :as db    ]
-            [cemerick.url          :as url   ]
-            [clj-http.client       :as client]
-            [clojure.pprint                  ])
+  (:require [clojbot.botcore       :as core  ])
   (:gen-class))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;

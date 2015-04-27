@@ -43,6 +43,8 @@
 
 
 (defn read-with-timeout
+  "Reads a message from a channel with a timeout. Returns nil if the
+  timeout is exceeded."
   [channel timeout]
   (let [res (as/<!!
              (as/go
@@ -54,6 +56,7 @@
     res))
 
 (defn monitor-ref
+  "Monitors a ref for changes."
   [r]
   (add-watch r :watcher
              (fn [key atom old-state new-state]
@@ -63,6 +66,7 @@
 
 
 (defn shift-left
+  "Takes a list and shifts it one position the left."
   [xs]
   (let [len (count xs)
         shift (take len (drop 1 (cycle xs)))]
@@ -70,13 +74,17 @@
 
 
 (defn pprint-to-string
+  "Takes any value and prettyprints it into a string instead of to
+  stdout."
   [val]
   (let [writer (StringWriter.)]
     (pprint/pprint val writer)
     (.toString writer)))
 
 
-(defn my-expander [form depth]
+(defn my-expander
+"Takes a form and calls macroexpand on it n times."
+  [form depth]
   (cond
    (= 0 depth)
    form

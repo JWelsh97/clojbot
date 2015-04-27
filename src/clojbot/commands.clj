@@ -6,6 +6,7 @@
 
 
 (defn send-ping
+  "Sends a ping message to the connected server."
   [bot]
   (dosync (core/write-message bot "PING 1234")))
 

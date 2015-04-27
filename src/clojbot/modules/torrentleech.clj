@@ -6,9 +6,9 @@
            [clojbot.botcore       :as core  ]
            [clojbot.utils         :as u     ]))
 
-;;;;;;;;;;;;;;;;;;;;;;;
-;; TORRENTLEECH URLS ;;
-;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; TORRENTLEECH URLS AND STUFF ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (def ^:dynamic header {
                        "User-Agent"  "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:24.0) Gecko/20100101 Firefox/24.0"
@@ -16,13 +16,18 @@
                        "Accept-Encoding" "gzip, deflate"
                        "Accept-Language" "en-US,en;q=0.5"
                        "Connection" "keep-alive"})
+
+
 (def ^:dynamic loginurl "http://torrentleech.org/user/account/login/")
 (def ^:dynamic profileurl "http://torrentleech.org/profile/%s/#profileTab")
 (def ^:dynamic homepage "http://torrentleech.org/torrents/browse/")
 
+
 (def ^:dynamic replyformat "Ratio: %s Up: %s Down: %s")
 
+
 (def ^:dynamic cookies nil)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;
 ;; HELPER FUNCTIONS ;;
@@ -32,7 +37,7 @@
 (defn- valid-profile?
   "Checks if the given page source constitues a valid profile."
   [pagesource]
-  (not (re-find #".*Profile.*does\snot\sexist.*" pagesource)))
+  (re-find #".*Join\sDate.*" pagesource))
 
 
 (defn- logged-in?
@@ -54,7 +59,6 @@
   "Scrapes the userinfo from the torrentleech profile page.
    Assumes a binding of cookiejar(clj-http.core/*cookie-store*)."
   [username]
-  (log/info "Getting userinfo for " username)
   (let [source (:body (client/get (format profileurl (str username))
                                   {:throw-exceptions false}))]
     (if (valid-profile? source)
