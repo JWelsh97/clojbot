@@ -1,19 +1,11 @@
 (ns clojbot.modules.echo
   (:require [clojbot.commands :as cmd]
-            [clojbot.botcore :as c]))
+            [clojbot.botcore  :as core]))
 
 
-;; (c/module
-;;   :echomodule
-;;   (c/defcommand 
-;;     "echo"
-;;     (fn [srv args msg]
-;;       (cmd/send-message srv (:channel msg) args)))
-;;   (c/defcommand 
-;;     "echothis"
-;;     (fn [srv args msg]
-;;       (cmd/send-message srv (:channel msg)))))
-
-(c/defmodule
+(core/defmodule
   :echomodule
-  :foobar)
+  (core/defcommand
+    "echo"
+    (fn [srv args msg]
+      (cmd/send-message srv (:channel msg) args))))

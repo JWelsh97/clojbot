@@ -27,7 +27,8 @@
 
 (defmacro defcommand
   [trigger handler]
-  `{:kind :command :trigger ~trigger :handler ~handler})
+  `{:kind :command :command ~trigger :handler ~handler})
+
 
 (defmacro defhook
   [type handler]
@@ -35,10 +36,10 @@
 
 
 (defmacro defmodule
-  [modulename & maps]
-  `(defn load-module [srvrs#]
-     (doseq [cmd# ~maps]
-       (~add-module srvrs# cmd#))))
+  [modulename & cmds]
+  `(defn ~'load-module [srvrs#]
+     (doseq [cmd# [~@cmds]]
+       (add-module srvrs# cmd#))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Helper Abstractions ;;
@@ -96,7 +97,7 @@
   be empty."
   [msg]
   (try
-    (when-let [regex (re-matches #"~(\w+)\s?(.+)" (:message msg))]
+    (when-let [regex (re-matches #"~(\w+)\s?(.+)?" (:message msg))]
       {:trigger (keyword (nth regex 1))
        :args    (nth regex 2)})
     (catch NullPointerException e nil)))
@@ -110,6 +111,7 @@
   (let [handlermap (commandmap srv)
         handlers   (kind handlermap)]
     (doseq [handler handlers]
+      (log/debug "Applying handler for command" kind)
       (try
         (apply handler args)
         (catch Exception e
@@ -285,8 +287,8 @@
   "Function that dispatches over the type of message we receive."
   [msg srv]
   ;; Ignored messages.
-  (when-not (contains? #{"372"} (:command msg))
-    (log/info " IN -" (format "%15s" (human-name srv)) " - " (:original msg)))
+  ;; (when-not (contains? #{"372"} (:command msg))
+  ;;   (log/info " IN -" (format "%15s" (human-name srv)) " - " (:original msg)))
   (cond
    (= "NICK" (:command msg))
    (handle-change-nick srv (:message msg))
@@ -458,6 +460,7 @@
     (write-message srv (str "NICK " nick))
     (write-message srv (str "USER " nick " 0 * :" name))))
 
+
 (defn- join-channel
   "Joins a given channel list."
   [srv channel]
@@ -510,10 +513,33 @@
                          conj handler))))))
 
 
-
 ;;;;;;;;;
 ;; API ;;
 ;;;;;;;;;
+
+
+(defn add-module
+  " Takes the bot and adds a commandmap to it. This method should only
+  be used by the macros! This method can not be made private. Hence,
+  its in the API."
+  [server-instances command]
+  ;; Log it.
+  (log/debug "Adding "
+             (if (:command command)
+               (str "command " (:command command))
+               (str "hook on " (:hook command))))
+  (doall
+   (map #(add-handler % command) server-instances)))
+
+
+(defn load-module
+  "Takes the bot and the string representation of a module. Loads the
+  module and attaches it to the bot."
+  [srvrs name]
+  (let [fullns (symbol (str "clojbot.modules." name))
+        modfn  (symbol (str "clojbot.modules." name "/load-module"))]
+    (require fullns :reload)
+    ((resolve modfn) srvrs)))
 
 
 (defn write-message
@@ -523,12 +549,6 @@
   [srv message]
   (let [chan (:out-chan  @srv)]
     (as/>!! chan message)))
-
-
-(defn add-module
-  [server-instances command]
-  (doall
-   (map #(add-handler % command) server-instances)))
 
 
 (defn create-bots
@@ -553,5 +573,9 @@
   each of the servers in the configuration. This results in a list of
   servers (which are refs)."
   []
-  (let [server-config (edn/read-string (slurp "conf/servers.edn"))]
-    (connect-bots (create-bots server-config))))
+  (let [server-config (edn/read-string (slurp "conf/servers.edn"))
+        bot-config    (edn/read-string (slurp "conf/bot.edn"))
+        instances     (create-bots server-config)]
+    (connect-bots instances)
+    (doseq [module (:modules bot-config)]
+      (load-module instances module))))

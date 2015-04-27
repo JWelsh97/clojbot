@@ -1,8 +1,9 @@
 (ns clojbot.modules.google
-  (:require [clojure.tools.logging :as log]
-            [clojbot.commands      :as cmd]
-            [cemerick.url          :as url]
-            [clj-http.client       :as client]))	
+  (:require [clojure.tools.logging :as log   ]
+            [clojbot.commands      :as cmd   ]
+            [cemerick.url          :as url   ]
+            [clj-http.client       :as client]
+            [clojbot.botcore       :as core  ]))	
 
 
 (def ^:dynamic header {
@@ -12,7 +13,7 @@
                        "Accept-Language" "en-US,en;q=0.5"
                        "Connection" "keep-alive"})
 
-(defn search
+(defn- search
   "Gets the first search result form google, given a search term in
   query."
   [query]
@@ -28,12 +29,14 @@
               fname (nth matches 2)]
           {:url furl :title fname})))))
 
-(def googlesearch {:kind    :command
-                   :command "google"
-                   :handler (fn [srv args msg]
-                              (log/debug "Searching Google for " args)
-                              (let [results (search args)]
-                                (if results
-                                  (cmd/send-message srv (:channel msg) (str (:title results) " :: " (:url results)))
-                                  (cmd/send-message srv (:channel msg) "No results found!"))))})
 
+(core/defmodule
+  :googlemodule
+  (core/defcommand
+    "google"
+    (fn [srv args msg]
+      (log/debug "Searching Google for " args)
+      (let [results (search args)]
+        (if results
+          (cmd/send-message srv (:channel msg) (str (:title results) " :: " (:url results)))
+          (cmd/send-message srv (:channel msg) "No results found!"))))))

@@ -1,6 +1,8 @@
 (ns clojbot.utils
+  (:import  [java.io StringWriter         ])
   (:require [clojure.tools.logging :as log]
-            [clojure.core.async    :as as]))
+            [clojure.core.async    :as as ]
+            [clojure.pprint        :as pprint]))
 
 (defn destruct-raw-message
   "Destructs a message into a map."
@@ -14,6 +16,15 @@
     ;; (if (re-matches #"\S+!.*" (:sender map))
     ;;   (assoc map :nickname ((re-matches #"(.+)!.*" (:sender map)) 1))
     ;;   map)))
+
+
+
+(defn sender-nick
+  "Parses the actual nickname from a sender sender!sender@foo.bar.com"
+  [message]
+  (when-let [sender (re-find #"(.+)!.*" (:sender message))]
+    (nth sender 1)))
+
 
 (defn try-times
   "Executes thunk. If an exception is thrown, will retry. At most n retries
@@ -56,6 +67,24 @@
   (let [len (count xs)
         shift (take len (drop 1 (cycle xs)))]
     shift))
+
+
+(defn pprint-to-string
+  [val]
+  (let [writer (StringWriter.)]
+    (pprint/pprint val writer)
+    (.toString writer)))
+
+
+(defn my-expander [form depth]
+  (cond
+   (= 0 depth)
+   form
+   (not (list? form))
+   (macroexpand form)
+   :else
+   (macroexpand (map macroexpand (my-expander form (dec depth))))))
+
 
 
 

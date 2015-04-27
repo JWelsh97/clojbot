@@ -1,5 +1,6 @@
 (ns clojbot.modules.youtube
   (:require [clojure.pprint               ]
+            [clojbot.botcore       :as core]
             [clojbot.commands      :as cmd]
             [clojure.tools.logging :as log]
             [clojure.edn           :as edn])
@@ -9,6 +10,12 @@
            [com.google.api.client.http HttpRequest HttpRequestInitializer]
            [com.google.api.client.http.javanet     NetHttpTransport]
            [com.google.api.client.json.jackson2    JacksonFactory]))
+
+
+;;;;;;;;;;;;;
+;; Helpers ;;
+;;;;;;;;;;;;;
+
 
 (defn- urlify
   "Takes a YouTube video ID and returns an URL pointing to it."
@@ -32,7 +39,7 @@
   (str (.getCode (.getDetails ex)) " : " (.getMessage (.getDetails ex))))
 
 
-(defn search
+(defn- search
   "Takes a search term and searches YouTube by keyword.  Returns a
   lazy sequence of search results wrapped in a map. {:result seq} in
   case of success, return {:error message} in case of failure.  Each
@@ -86,28 +93,34 @@
       result
       {:result  (map (comp parse-result bean) (iterator-seq (.iterator (.getItems result))))})))
 
+;;;;;;;;;;;;
+;; Module ;;
+;;;;;;;;;;;;
 
-(def youtubesearch {:kind    :command
-                    :command "youtube"
-                    :handler (fn [srv args msg]
-                               (log/debug "Executing youtube handler: " args)
-                               (let [{r :result e :error} (search args)]
-                                 ;; Send the first result, properly formatted,
-                                 ;; back to the channel.  If there are no
-                                 ;; results, say so.
-                                 (if e
-                                   ;; If there was an exceptoin, print it out.
-                                   (cmd/send-message srv
-                                                     (:channel msg)
-                                                     (str "An error occured: " e))
-                                   ;; If there was no exception, check if
-                                   ;; there is an empty list.  If not, take
-                                   ;; the first result.
-                                   (cmd/send-message srv
-                                                     (:channel msg)
-                                                     (if (empty? r)
-                                                       "No search results!"
-                                                       (let [hit   (first r)
-                                                             title (:title hit)
-                                                             url   (:url hit)]
-                                                         (str title " :: " url)))))))})
+
+(core/defmodule
+  :youtubesearchmodule
+  (core/defcommand
+    "youtube"
+    (fn [srv args msg]
+      (log/debug "Executing youtube handler: " args)
+      (let [{r :result e :error} (search args)]
+        ;; Send the first result, properly formatted,
+        ;; back to the channel.  If there are no
+        ;; results, say so.
+        (if e
+          ;; If there was an exceptoin, print it out.
+          (cmd/send-message srv
+                            (:channel msg)
+                            (str "An error occured: " e))
+          ;; If there was no exception, check if
+          ;; there is an empty list.  If not, take
+          ;; the first result.
+          (cmd/send-message srv
+                            (:channel msg)
+                            (if (empty? r)
+                              "No search results!"
+                              (let [hit   (first r)
+                                    title (:title hit)
+                                    url   (:url hit)]
+                                (str title " :: " url)))))))))

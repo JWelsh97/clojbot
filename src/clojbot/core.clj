@@ -25,15 +25,9 @@
 ;;; - Use regex to filter server to attach to.
 ;;; - Make write message accept any number of strings as final params.
 ;;; - Cleanup youtube.clj?
+;;; - Bots/servers should be singular!
+
 
 (defn -main
   [& args]
-  (println "foobar")
-  (let [bots ]
-    (doseq [modname ["echo"]]                              ;;
-      (let [pins (symbol (str "clojbot.modules." modname)) ;;
-            modfn (symbol (str pins "/load-module"))]      ;;
-        (require pins :reload)                             ;;
-        (let [modfn (resolve modfn)]                       ;;
-    
-          (core/add-module bots (modfn)))))))
+  (let [bot (core/init-bot)]))
