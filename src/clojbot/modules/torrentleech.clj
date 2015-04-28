@@ -100,7 +100,7 @@
   (core/defcommand
     "u"
     (fn [srv args msg]
-      (let [credentials (edn/read-string (slurp (io/file (io/resource "torrentleech.edn"))))]
+      (let [credentials (edn/read-string (slurp  (io/resource "torrentleech.edn")))]
         ;; Use a cookiestore binding. Each subsequent request using client will
         ;; use the proper cookies.
         (binding  [clj-http.core/*cookie-store* (clj-http.cookies/cookie-store)]

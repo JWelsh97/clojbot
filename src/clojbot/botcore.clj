@@ -574,8 +574,8 @@
   each of the servers in the configuration. This results in a list of
   servers (which are refs)."
   []
-  (let [server-config (edn/read-string (slurp (io/file (io/resource "servers.edn"))))
-        bot-config    (edn/read-string (slurp (io/file (io/resource "bot.edn"))))
+  (let [server-config (edn/read-string (slurp  (io/resource "servers.edn")))
+        bot-config    (edn/read-string (slurp  (io/resource "bot.edn")))
         instances     (create-bots server-config)]
     (connect-bots instances)
     (doseq [module (:modules bot-config)]

@@ -54,7 +54,7 @@
         ;; default is nil.  This will cause unauthenticated searches and might
         ;; fail.
         apikey   (try
-                   (:apikey (edn/read-string (slurp (io/file (io/resource "youtube.edn")))))
+                   (:apikey (edn/read-string (slurp (io/resource "youtube.edn"))))
                    (catch java.io.FileNotFoundException e
                      (log/error "No conf/youtube.edn file found! Using unauthenticated mode!")
                      nil))
