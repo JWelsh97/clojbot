@@ -287,8 +287,8 @@
   "Function that dispatches over the type of message we receive."
   [msg srv]
   ;; Ignored messages.
-  ;; (when-not (contains? #{"372"} (:command msg))
-  ;;   (log/info " IN -" (format "%15s" (human-name srv)) " - " (:original msg)))
+  (when-not (contains? #{"372"} (:command msg))
+     (log/info " IN -" (format "%15s" (human-name srv)) " - " (:original msg)))
   (cond
    (= "NICK" (:command msg))
    (handle-change-nick srv (:message msg))

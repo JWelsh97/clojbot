@@ -33,9 +33,9 @@
     (let [resp    (client/get search {:headers header})
           matches (re-find #"<h3.*?><a href=\"(.+?)\" .*?>(.*?)<\/a>" (:body resp))]
       (when matches
-        (let [furl  (url/url-decode (nth matches 1))
-              fname (nth matches 2)]
-          {:url furl :title fname})))))
+        (let [reslink (url/url-decode (nth matches 1))
+              resname (nth matches 2)]
+          {:url reslink :title resname})))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;

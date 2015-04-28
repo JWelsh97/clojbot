@@ -12,8 +12,7 @@
 (defn is-palindrome?
   "Checks if a word is longer than 5 chars and a palindrome."
   [word]
-  (and (< 5  (count word))
-       (= word (apply str (reverse word)))))
+  (= word (apply str (reverse word))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;
@@ -27,5 +26,6 @@
     :PRIVMSG
     (fn [srv msg]
       (let [msgtext (clojure.string/replace (:message msg) #"[^a-zA-Z0-9]" "")]
-        (when  ((comp is-palindrome? str/lower-case) msgtext)
+        (when  (and (< 4 (count msgtext))
+                    ((comp is-palindrome? str/lower-case) msgtext))
           (cmd/send-message srv (:channel msg) "Palindrome!"))))))
