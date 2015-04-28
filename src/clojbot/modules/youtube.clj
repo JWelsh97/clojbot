@@ -3,7 +3,8 @@
             [clojbot.botcore       :as core]
             [clojbot.commands      :as cmd]
             [clojure.tools.logging :as log]
-            [clojure.edn           :as edn])
+            [clojure.edn           :as edn]
+            [clojure.java.io       :as io ])
   (:import [com.google.api.services.youtube        YouTube]
            [com.google.api.services.youtube.model  ResourceId SearchListResponse SearchResult Thumbnail]
            [com.google.api.client.googleapis.json  GoogleJsonResponseException]
@@ -53,7 +54,7 @@
         ;; default is nil.  This will cause unauthenticated searches and might
         ;; fail.
         apikey   (try
-                   (:apikey (edn/read-string (slurp "conf/youtube.edn")))
+                   (:apikey (edn/read-string (slurp (io/file (io/resource "youtube.edn")))))
                    (catch java.io.FileNotFoundException e
                      (log/error "No conf/youtube.edn file found! Using unauthenticated mode!")
                      nil))

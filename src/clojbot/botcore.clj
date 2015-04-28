@@ -8,7 +8,8 @@
             [clojure.core.async    :as as ]
             [clojure.tools.logging :as log]
             [clojure.string        :as str]
-            [clojure.edn           :as edn]))
+            [clojure.edn           :as edn]
+            [clojure.java.io       :as io ]))
 
 
 (declare write-message)
@@ -115,7 +116,7 @@
       (try
         (apply handler args)
         (catch Exception e
-          (log/error "Command handler " handler " threw an exception: " (.getMessage e)))))))
+          (log/error "Command handler " handler " threw an exception: " (.getMessage e) "\n" (.getStacktrace e)))))))
 
 (defn- apply-hooks-of-kind-to
   "Given a kind and arguments, this function will take out all the
@@ -573,8 +574,8 @@
   each of the servers in the configuration. This results in a list of
   servers (which are refs)."
   []
-  (let [server-config (edn/read-string (slurp "conf/servers.edn"))
-        bot-config    (edn/read-string (slurp "conf/bot.edn"))
+  (let [server-config (edn/read-string (slurp (io/file (io/resource "servers.edn"))))
+        bot-config    (edn/read-string (slurp (io/file (io/resource "bot.edn"))))
         instances     (create-bots server-config)]
     (connect-bots instances)
     (doseq [module (:modules bot-config)]

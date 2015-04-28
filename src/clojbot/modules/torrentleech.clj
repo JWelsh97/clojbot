@@ -5,7 +5,8 @@
            [clojbot.commands      :as cmd   ]
            [clojbot.botcore       :as core  ]
            [clojbot.utils         :as u     ]
-           [clojure.string        :as str   ]))
+           [clojure.string        :as str   ]
+           [clojure.java.io       :as io    ]))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; TORRENTLEECH URLS AND STUFF ;;
@@ -53,7 +54,8 @@
 (defn- valid-profile?
   "Checks if the given page page constitues a valid profile."
   [page]
-  (re-find #".*Join\sDate.*" page))
+  (and (not (:error page))
+       (re-find #".*Join\sDate.*" page)))
 
 
 (defn- logged-in?
@@ -79,7 +81,7 @@
    Assumes a binding of cookiejar(clj-http.core/*cookie-store*)."
   [username]
   (let [page (get-page (format profileurl (str/lower-case username)))]
-    (if (valid-profile? page)
+    (if  (valid-profile? page)
       ;; Scrape the info. Will return nil if the regex failed.
       (let [ratio (nth  (re-find #"<b>Ratio:</b>\s(.*?)<" page) 1)
             up    (nth  (re-find #"Up:</b></span>\s(.*?)<" page) 1)
@@ -98,7 +100,7 @@
   (core/defcommand
     "u"
     (fn [srv args msg]
-      (let [credentials (edn/read-string (slurp "conf/torrentleech.edn"))]
+      (let [credentials (edn/read-string (slurp (io/file (io/resource "torrentleech.edn"))))]
         ;; Use a cookiestore binding. Each subsequent request using client will
         ;; use the proper cookies.
         (binding  [clj-http.core/*cookie-store* (clj-http.cookies/cookie-store)]

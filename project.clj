@@ -22,4 +22,5 @@
                  [com.cemerick/url "0.1.1"]]
   :plugins [[codox "0.8.11"]]
   :java-source-paths ["java"]
+  :resource-paths ["conf"]
   :aot [:all])
