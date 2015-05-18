@@ -1,8 +1,9 @@
 (ns clojbot.db
-  (:require [clojure.java.jdbc :as sql]
-            [clojure.edn       :as edn]
-            [clj-time.core     :as   t]
-            [clj-time.coerce   :as   c]))
+  (:require [clojure.java.jdbc     :as sql]
+            [clojure.edn           :as edn]
+            [clj-time.core         :as   t]
+            [clj-time.coerce       :as   c]
+            [clojure.tools.logging :as log]))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Configuring postgres:                                                           ;;
@@ -68,10 +69,12 @@
 (defn insert-into-table
   "Function that is used by macros to insert data into a table."
   [table datamap]
+  (log/debug "insert: " datamap)
   (sql/insert! (read-db-config) table datamap))
 
 
 (defn query-table
   "Executes a query on the database and returns the results.. "
   [query]
+  (log/debug query)
   (sql/query (read-db-config) [query]))

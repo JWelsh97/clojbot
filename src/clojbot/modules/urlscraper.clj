@@ -43,10 +43,16 @@
             sender (:nickname msg "unknown")]
         ;; For each url, check if it is old or not.
         ;; If it's old, shout, otherwise insert into db.
+        (println msg)
         (doseq [url urls]
+          (println "repost?: " url (repost? url chan))
           (if-let [res (repost? url chan)]
             (let [sender     (:sender res)
                   time       (c/from-sql-time (:time res))
                   timestring (f/unparse  timeformat time)]
+
               (cmd/send-message srv chan (format shout sender timestring)))
-            (core/store :urlstorage {:url url :time (c/to-timestamp (t/now)) :sender sender})))))))
+            (core/store :urlstorage {:url     url
+                                     :time    (c/to-timestamp (t/now))
+                                     :sender  sender
+                                     :channel chan})))))))

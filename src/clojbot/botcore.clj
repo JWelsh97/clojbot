@@ -154,6 +154,7 @@
   (let [hooks    (hookmap srv)
         handlers (kind hooks)]
     (doseq [handler handlers]
+      (log/debug "Applying hook for type" kind)
       (try
         (apply handler args)
         (catch Exception e
