@@ -9,7 +9,8 @@
             [clojure.tools.logging :as log]
             [clojure.string        :as str]
             [clojure.edn           :as edn]
-            [clojure.java.io       :as io ]))
+            [clojure.java.io       :as  io]
+            [clojbot.db            :as  db]))
 
 
 (declare write-message)
@@ -36,11 +37,37 @@
   `{:kind :hook :hook ~type :handler ~handler})
 
 
+(defmacro defstorage
+  [tablename & fields]
+  `{:kind    :storage
+    :handler (fn []
+               (db/create-table ~tablename ~@fields))})
+
+
 (defmacro defmodule
   [modulename & cmds]
   `(defn ~'load-module [srvrs#]
      (doseq [cmd# [~@cmds]]
-       (add-module srvrs# cmd#))))
+       (let [knd#  (:kind cmd#)
+             body# (:handler cmd#)]
+
+         (if (= :storage knd#)
+           (body#)
+           (add-module srvrs# cmd#))))))
+
+
+(defmacro store
+  [table mapvalues]
+  `(if (db/table-exists? ~table)
+    (db/insert-into-table ~table ~mapvalues)
+    (throw (ex-info "Table does not exist!"))))
+
+
+(defmacro query
+  [query]
+  `(db/query-table ~query))
+
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Helper Abstractions ;;

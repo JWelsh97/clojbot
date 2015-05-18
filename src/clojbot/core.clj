@@ -25,6 +25,7 @@
 ;;; - Make write message accept any number of strings as final params.
 ;;; - Cleanup youtube.clj?
 ;;; - Bots/servers should be singular!
+;;; - Find a better regex for URLS!
 
 
 

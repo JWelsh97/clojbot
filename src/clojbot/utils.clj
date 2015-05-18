@@ -11,11 +11,10 @@
         (zipmap
          [:original :sender :command :channel :message]
          (re-matches #"^(?:[:](\S+) )?(\S+)(?: (?!:)(.+?))?(?: [:](.+))?$" message))]
-    map))
     ;; If the nickname is found, put it in the map.
-    ;; (if (re-matches #"\S+!.*" (:sender map))
-    ;;   (assoc map :nickname ((re-matches #"(.+)!.*" (:sender map)) 1))
-    ;;   map)))
+    (if-let [nick (re-matches #"(.+)!.*" (:sender map))]
+      (assoc map :nickname (nick 1))
+      map)))
 
 
 
