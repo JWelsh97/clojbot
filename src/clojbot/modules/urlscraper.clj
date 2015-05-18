@@ -6,6 +6,8 @@
             [clj-time.format  :as    f]))
 
 (def url-regex #"(https?|ftp):\/\/[^\s/$.?#].[^\s]*")
+(def shout "Old! Original by %s (%s).")
+(def timeformat (f/formatter "dd/MM/yyy HH:mm"))
 
 ;;;;;;;;;;;;;
 ;; Helpers ;;
@@ -19,8 +21,10 @@
 (defn repost?
   "Returns true or false. Just checks if there is an entry in the
   database that matches the given url."
-  [url]
-  (first (core/query (format "select * from urlstorage where url = '%s'" url))))
+  [url channel]
+  (first
+   (core/query
+    (format "select * from urlstorage where url = '%s' and channel = '%s'" url channel))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -30,19 +34,19 @@
 (core/defmodule
   :urlscraper
   (core/defstorage
-    :urlstorage [:url :text] [:time :timestamp] [:sender :text])
+    :urlstorage [:url :text] [:time :timestamp] [:sender :text] [:channel :text])
   (core/defhook
     :PRIVMSG
     (fn [srv msg]
       (let [urls   (get-urls-from-line (:message msg))
             chan   (:channel msg)  
             sender (:nickname msg "unknown")]
-        
+        ;; For each url, check if it is old or not.
+        ;; If it's old, shout, otherwise insert into db.
         (doseq [url urls]
-          (if-let [res (repost? url)]
+          (if-let [res (repost? url chan)]
             (let [sender     (:sender res)
                   time       (c/from-sql-time (:time res))
-                  timestring (f/unparse  (f/formatter "dd/MM/yyy HH:mm") time)
-                  reply      (format "Old! Original by %s (%s)" sender timestring)]
-              (cmd/send-message srv chan reply))
+                  timestring (f/unparse  timeformat time)]
+              (cmd/send-message srv chan (format shout sender timestring)))
             (core/store :urlstorage {:url url :time (c/to-timestamp (t/now)) :sender sender})))))))

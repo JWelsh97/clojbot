@@ -72,5 +72,6 @@
 
 
 (defn query-table
+  "Executes a query on the database and returns the results.. "
   [query]
   (sql/query (read-db-config) [query]))
