@@ -31,5 +31,4 @@
 
 (defn -main
   [& args]
-  (let [bot (core/init-bot)]
-    (println bot)))
+  (core/init-bot))
