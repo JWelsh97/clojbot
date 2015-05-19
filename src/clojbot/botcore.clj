@@ -208,7 +208,11 @@
   [socket]
   (try
     (let [line (.readLine (:in socket))]
-      (u/destruct-raw-message line))
+      (when line
+        (log/debug "RAW IN :: " line)
+        (let [parsed (u/destruct-raw-message line)]
+          (log/debug "PARSED :: " parsed)
+          parsed)))
     (catch Exception e
       nil)))
 
@@ -222,6 +226,7 @@
   "Reads a message from the incoming socket and dispatches it."
   [srv]
   (let [msg (read-in (:socket @srv))]
+    
     (when msg
       (handle-message msg srv))))
 

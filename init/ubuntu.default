@@ -1,0 +1,4 @@
+CB_USER=christophe
+CB_PIDFILE=/tmp/clojbot-pid
+CB_HOME=/home/christophe/clojbot
+PATH_TO_JAR=/home/christophe/vcs/clojbot/target/clojbot-0.1.0-SNAPSHOT-standalone.jar

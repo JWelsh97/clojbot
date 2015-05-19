@@ -1,0 +1,58 @@
+#! /bin/sh
+# Check for existance of defaults file
+if [ -f /etc/default/clojbot ]; then
+    . /etc/default/clojbot
+else
+    echo "/etc/default/clojbot not found , exiting.";
+    exit
+fi
+
+# Script name
+NAME=clojbot
+# App name
+DESC=Clojbot
+# Run CP as username
+USER=${CB_USER}
+# Path to store PID file
+PIDF=${CB_PIDFILE}
+# Path of the jar file. Can be used to chdir to that path.
+HOME=${CB_HOME}
+#Location of the JAR file
+JARFILE=${PATH_TO_JAR}
+# Java Runtime
+DAEMON="/usr/bin/java"
+# Java args
+ARGS="-server -Djava.awt.headless=true -jar $JARFILE"
+
+set -e
+
+
+case "$1" in
+  start)
+        touch $PIDF
+        chown $USER $PIDF
+        echo "Starting $DESC"
+        start-stop-daemon --start --pidfile "$PIDF" --chuid "$USER" --background --make-pidfile --startas "$DAEMON" -- $ARGS
+        ;;
+  stop)
+        echo "Stopping $DESC"
+        start-stop-daemon --stop --pidfile $PIDF --retry 15 --oknodo
+        ;;
+
+  restart|force-reload)
+        echo "Restarting $DESC"
+        start-stop-daemon --stop --pidfile $PIDF --retry 15 --oknodo
+        start-stop-daemon --start --pidfile "$PIDF" --chuid "$USER" --background --make-pidfile --startas "$DAEMON" -- $ARGS
+        ;;
+
+  status)
+       status_of_proc -p $PIDF "$DAEMON" "$NAME"
+        ;;
+  *)
+        N=/etc/init.d/$NAME
+        echo "Usage: $N {start|stop|restart|force-reload|status}" >&2
+        exit 1
+        ;;
+esac
+
+exit 0
