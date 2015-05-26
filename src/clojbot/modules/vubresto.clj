@@ -28,8 +28,8 @@
 (defn get-resto-json
   "Requests the json data and returns it parsed into clojure
   datastructures."
-  []
-  (let [response (get-page resto-url-en)]
+  [lang]
+  (let [response (get-page (if (= lang :en) resto-url-en resto-url-nl))]
     (when (not (:error response))
       (u/keywordize-keys (json/read-str response)))))
 
@@ -56,7 +56,7 @@
   (core/defcommand
     "fret"
     (fn [srv args msg]
-      (let [today (find-today (get-resto-json))]
+      (let [today (find-today (get-resto-json (if (= args "nl") :nl :en)))]
         (if today
           (cmd/send-message srv (:channel msg) (menu-to-string today))
           (cmd/send-message srv (:channel msg) "Error getting data. Go go gadget debugger!"))))))
