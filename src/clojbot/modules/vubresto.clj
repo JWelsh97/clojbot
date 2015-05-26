@@ -28,10 +28,14 @@
 (defn get-resto-json
   "Requests the json data and returns it parsed into clojure
   datastructures."
-  [lang]
-  (let [response (get-page (if (= lang :en) resto-url-en resto-url-nl))]
-    (when (not (:error response))
-      (u/keywordize-keys (json/read-str response)))))
+  ([]
+   (get-resto-json "en"))
+  ([lang]
+   
+   (let [language (cond (= "nl" lang) "nl" :else "en") ;; make sure we dont construct invalid vars
+         response (get-page (var-get (ns-resolve 'clojbot.modules.vubresto (symbol (str "resto-url-" language)))))]
+     (when (not (:error response))
+       (u/keywordize-keys (json/read-str response))))))
 
 
 (defn find-today
@@ -56,7 +60,7 @@
   (core/defcommand
     "fret"
     (fn [srv args msg]
-      (let [today (find-today (get-resto-json (if (= args "nl") :nl :en)))]
+      (let [today (find-today (get-resto-json args))]
         (if today
           (cmd/send-message srv (:channel msg) (menu-to-string today))
           (cmd/send-message srv (:channel msg) "Error getting data. Go go gadget debugger!"))))))
