@@ -25,7 +25,7 @@
   [url apikey]
   (try (:body (client/get url {:query-params {:app_id apikey}}))
        (catch Exception e
-         (log/error "GET" url "failed!\n" (.getMessage e))
+         (log/error "GET" url "failed" (.getMessage e))
          nil)))
 
 (defn- raw-to-json
@@ -37,9 +37,7 @@
 
 (defn- get-currency
   [json currency-code]
-  (let [base     (:base json)
-        currency ((comp (keyword currency-code) :rates) json)]
-    currency))
+  ((comp (keyword currency-code) :rates) json))
 
 
 (defn- convert
@@ -50,7 +48,7 @@
                          (slurp  (io/resource "openexchange.edn"))))
             currencies (get-currency-rates oe-url apikey)
             parsed     (raw-to-json currencies)
-            from-curr  (get-currency parsed from) ;; 1 dolalr == from-curr from
+            from-curr  (get-currency parsed from)
             to-curr    (get-currency parsed to)]
            (* (/ amount from-curr) to-curr)))
 
@@ -73,9 +71,7 @@
   (core/defcommand                                                                                
     "curr"                                                                                        
     (fn [srv args msg]
-      (log/debug "Executing handler for currency")
-      (log/debug "parsed input:" (parse-input args))
       (if-let [{v :value f :from t :to} (parse-input args)]
         (cmd/send-message srv (:channel msg) (format "%.3g %s" (convert f t v) t))
-        (log/debug "Could not parse valid command from ars:" args))))) 
+        (cmd/send-message srv (:channel msg) "Input invalid. E.g., `5.23 EUR to USD`"))))) 
 
