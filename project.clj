@@ -21,7 +21,9 @@
                  [clj-http "1.1.1"                                                 ]
                  [com.cemerick/url "0.1.1"                                         ]
                  [org.clojure/data.json "0.2.6"                                    ]
-                 [clj-time "0.9.0"                                                 ]]
+                 [clj-time "0.9.0"                                                 ]
+                 ;; moooonads!
+                 [org.clojure/algo.monads "0.1.5"]]
   :plugins [[codox "0.8.11"]]
   :java-source-paths ["java"]
   :resource-paths ["conf"]

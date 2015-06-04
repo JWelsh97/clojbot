@@ -10,6 +10,7 @@
             [clj-time.core         :as t     ]
             [clj-time.local        :as l     ]))
 
+;;TODO Do this with monads!!
 ;;;;;;;;;;;;;
 ;; HELPERS ;;
 ;;;;;;;;;;;;;
@@ -28,10 +29,10 @@
 (defn get-resto-json
   "Requests the json data and returns it parsed into clojure
   datastructures."
+  ;;; Default to english
   ([]
    (get-resto-json "en"))
   ([lang]
-   
    (let [language (cond (= "nl" lang) "nl" :else "en") ;; make sure we dont construct invalid vars
          response (get-page (var-get (ns-resolve 'clojbot.modules.vubresto (symbol (str "resto-url-" language)))))]
      (when (not (:error response))
